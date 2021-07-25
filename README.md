@@ -1,3 +1,2 @@
-# Flask-EncryptionApp
-source code of my flask web app BS-ENCRYPTOR.
-soon.
+*** BSEncryptor\ ***
+Code is still a mess but i will upload soon.
