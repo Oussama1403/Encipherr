@@ -1,0 +1,231 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>BS-ENCRYPTOR</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Powerful encryption for texts and files">
+<meta name="keywords" content="AES Encryption,AES,AES Decryption,encryption website,encryption software,encryption online,encryption,encrypt,encrypt text,encrypt files,protect files,protect texts,encryption website,secure files,decryption,decrypt text,decrypt files,encrypt excel file,encrypt word file,encrypt pdf file,encrypt .txt file,encrypt picture,encrypt image file,encrypt and decrypt,encrypt a word document,encrypt csv file,text encryption online,file encryption online,text encryption,file encryption,encrypt data,oussama ben sassi,oussama1403,oussama b.sassi,oussama sassi,bsencryptor,BS-Encryptor,,BS-ENCRYPTOR,encrypt files,powerful encryption">
+<meta name="author" content="Oussama ben Sassi">
+
+
+<script src="/static/upload.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<style>
+
+body{
+	font-family: 'Montserrat', sans-serif;
+  background-color: #fcfcfc;
+}
+.aboutpage,.prvc,#intro {
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0.3;
+  }
+  100% {
+      opacity: 1;
+   }
+}
+
+nav {
+  box-shadow: 0px 3px 5px -1px rgba(158, 158, 158, 0.84);
+
+}
+a {
+  font-weight:normal;
+}
+
+.navbar-nav > li > a:hover{
+  background-color:#fdf9f9;
+  color:blueviolet!important;
+}
+.navbar-nav > li > a:active{
+  color:#fa464f!important;
+}
+
+.navbar-brand:hover{
+  background-color:rgb(255, 247, 247);
+  color:blueviolet!important;
+}
+.navbar-brand:active{
+  color:#fa464f!important;
+}
+
+.abtlink {
+  font-weight: 700;
+}
+.abtlink:hover {
+  color:#fa464f;
+  font-weight: 700;
+}
+.content {
+  padding-right: 7%;
+  padding-left: 7%;
+}
+.prvc {
+  padding-right: 2%;
+  padding-left: 2%;
+}
+
+#intro{
+  text-align: center;
+  color:#796F77;
+  font-weight: bold;
+  }
+
+.title {
+  font-family:'Nunito Sans', sans-serif;
+  font-size:25px;
+  color:#0d6efd;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+cursor: pointer;
+outline: 0;
+display: inline-block;
+font-weight: 400;
+line-height: 1.5;
+text-align: center;
+background-color: transparent;
+border: 1px solid transparent;
+padding: 16px 32px;
+font-size: 1rem;
+border-radius: .25rem;
+transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+color: #0d6efd;
+border-color: #0d6efd;
+}
+
+#upload_btn {
+color: #fa464f;
+border-color: #fa464f;
+}
+
+#upload_btn:hover {
+color: #ffffff;
+background-color: #fa464f;
+border-color: #fa464f;
+}
+
+
+</style>
+</head>
+
+<body>
+  <div class=".col-sm-">
+    <nav class="navbar navbar-light navbar-expand-lg">
+        <a class="navbar-brand" href="/home">BS-ENCRYPTOR</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/home">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/about">about <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/privacy">Privacy Policy <span class="sr-only">(current)</span></a>
+            </li>
+
+
+          </ul>
+        </div>
+      </nav>
+    </br>
+
+                <div class="container">
+                    
+
+                    
+                </div>
+
+ <p id="intro">
+  <span style="color:#3191F3">BS-ENCRYPTOR</span> is a web application that offers you a powerful encryption of texts or files.Protect your text/files right now!.
+      </p>
+ <hr></hr>
+ <div class="content">
+<form action="#" method="POST" enctype="multipart/form-data">
+  <span class="title">Text Encryption</span><hr/>
+
+    <p>Your key:</p>
+    <p><input type="text" name="key" value="" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm"></p>
+    <input type="submit" name="submit_b" value="Generate Key" class="btn btn-primary"/>
+    <br/><br/>
+
+    <p>Type Your Text here to encrypt/decrypt:</p>
+    <p><textarea type="text" name="txt" class="form-control"  rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm"></textarea></p>
+    <br>
+
+    <p><input type="submit" name="submit_b" value="Encrypt Text" class="btn btn-primary"/>
+    <input type="submit" name="submit_b" value="Decrypt Text" class="btn btn-primary"/>
+
+    </p>
+    <br />
+    <span class="title">File Encryption:</span><hr />
+
+        <label id="exampleInputFile">
+         <b>Max File Size:50mb</b>
+        </label>
+        <input type="file" id="file_input" name="file" class="form-control-file" />
+        <br />
+        <input type="submit" name="submit_b" id="upload_btn" value="Upload Selected File" class="btn btn-primary"/>
+
+        <input type="submit" name="submit_b" value="Encrypt File" class="btn btn-primary"/>
+        <input type="submit" name="submit_b" value="Decrypt File" class="btn btn-primary"/>
+        <!--
+        <input type="submit" name="submit_b" value="cancel" id="cancel_btn" class="btn btn-secondary"/>
+        <input type="submit" name="submit_b" value="loading" id="loading_btn" class="btn btn-secondary"/>
+        -->
+
+        <div id="progress_wrapper" class="d-none">
+          <label id="progress_status"></label>
+          <div class="progress mb-3">
+            <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+
+        <div id="alert_wrapper"></div>
+
+
+</form>
+<br/><br/>
+</div>
+
+
+
+
+
+        
+
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
