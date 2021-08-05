@@ -152,10 +152,17 @@
     </div>
                 <!-- error message div -->
                 <div class="container">
-                    
+                    {% for message in get_flashed_messages() %}
+                    <div class="alert alert-warning">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        hello world
+                      </div>
+                    {% endfor %}
                 
-                    
+                    {% block page_content %}{% endblock %}
                 </div>
+              
+               {% block content %}{% endblock content %} 
               
                
 
