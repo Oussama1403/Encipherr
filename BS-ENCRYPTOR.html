@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html>
-  <!-- home page template -->
   <head>
     <title>BS-ENCRYPTOR</title>
 
@@ -15,12 +13,15 @@
     <meta name="author" content="Oussama ben Sassi" />
 
     <script src="/static/upload.js"></script>
+    <script src="/static/ajaxcall.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300&display=swap" rel="stylesheet" />
-
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet" />
-    <link href="http://fonts.cdnfonts.com/css/bentonsans-regular" rel="stylesheet" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
     <style>
       body {
@@ -49,31 +50,38 @@
       }
       a {
         font-weight: normal;
+        transition: 0.3s ease;
+
       }
 
       .navbar-nav > li > a:hover {
-        background-color: #fdf9f9;
-        color: blueviolet !important;
+        color: #fa464f !important;
+        border-bottom: 2px solid #fa464f;
+        padding: 6px 0; 
+    
       }
       .navbar-nav > li > a:active {
         color: #fa464f !important;
       }
 
       .navbar-brand:hover {
-        background-color: rgb(255, 247, 247);
-        color: blueviolet !important;
+        color: #3191f3 !important;
+        border-bottom:2px solid #3191f3;
+        padding:6px 0;
       }
       .navbar-brand:active {
         color: #fa464f !important;
+        border-bottom:2px solid #fa464f;
+        padding:6px 0;
       }
-
       .abtlink {
         font-weight: 700;
       }
+      <!--
       .abtlink:hover {
         color: #fa464f;
         font-weight: 700;
-      }
+      }-->
       .content {
         padding-right: 7%;
         padding-left: 7%;
@@ -124,7 +132,73 @@
         background-color: #fa464f;
         border-color: #fa464f;
       }
+      @import url(https://fonts.googleapis.com/css?family=Lato);
+      @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+      
+      ul {
+      padding:0;
+      list-style: none;
+      }
+      .footer-social-icons {
+      display:block;
+      margin: 0 auto;
+      }
+      .social-icon {
+      color: #fff;
+      }
+      ul.social-icons {
+      margin-top: 10px;
+      }
+      .social-icons li {
+      vertical-align: top;
+      display: inline;
+      height: 100px;
+      }
+      .social-icons a {
+      color: #fff;
+      text-decoration: none;
+      }
+      .fa-facebook {
+      padding:18px 24px;
+      -o-transition:.5s;
+      -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
+      transition: .5s;
+      background-color: #322f30;
+      }
+      .fa-facebook:hover {
+      background-color: #3d5b99;
+      }
+      
+      .fa-google {
+      padding:18px 24px;
+      -o-transition:.5s;
+      -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
+      transition: .5s;
+      background-color: #322f30;
+      }
+      .fa-google:hover {
+      background-color: red;
+      }
+      
+      .fa-github {
+      padding:18px 24px;
+      -o-transition:.5s;
+      -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
+      transition: .5s;
+      background-color: #322f30;
+      }
+      .fa-github:hover {
+      background-color: #5a32a3;
+      }
+
     </style>
+   
   </head>
 
   <body>
@@ -140,7 +214,7 @@
               <a class="nav-link" href="/home">Home<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="/about">about <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
               <a class="nav-link" href="/privacy">Privacy Policy <span class="sr-only">(current)</span></a>
@@ -150,44 +224,50 @@
       </nav>
       <br />
     </div>
-                <!-- error message div -->
-                <div class="container">
+                
+                
+                <!-- error message used by AJAX -->
+                <div id="tohide">
+                    <div class="container">
+                        <div class="alert alert-warning">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <span id="message"></span>
+                          </div>
+                    
+                    </div>
+                </div>
+                
+                <!-- error message used by flask -->
+                <!--
+               <div class="container">
                     {% for message in get_flashed_messages() %}
                     <div class="alert alert-warning">
                         <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        hello world
-                      </div>
+                        {{ message }}
+                    </div>
                     {% endfor %}
-                
-                    {% block page_content %}{% endblock %}
-                </div>
-              
-               {% block content %}{% endblock content %} 
-              
+               </div>-->
                
-
 <p id="intro"><span style="color: #3191f3;">BS-ENCRYPTOR</span> is a web application that offers you a powerful encryption of texts or files.Protect your text/files right now!.</p>
 <hr />
 <div class="content">
-  <form action="#" method="POST" enctype="multipart/form-data">
+  <form id="form" action="#" method="POST" enctype="multipart/form-data">
     <span class="title">Text Encryption</span>
     <hr />
 
     <p>Your key:</p>
-    <p><input type="text" name="key" value="" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" /></p>
-    <input type="submit" name="submit_b" value="Generate Key" class="btn btn-primary" />
+    <p><input id="key" type="text" name="key" value="" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" /></p>
+    <input type="button" name="submit_b" onclick="genkey()" value="Generate Key" class="btn btn-primary"/>
     <br />
     <br />
 
     <p>Type Your Text here to encrypt/decrypt:</p>
-    <p><textarea name="txt" class="form-control" rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm"></textarea></p>
+    <p><textarea id="txtarea" name="txt" class="form-control" rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm"></textarea></p>
     <br />
+      <input type="button" name="submit_b" onclick="encrypt_text(this.name,this.value)" value="Encrypt Text" class="btn btn-primary" />
+      <input type="button" name="submit_b" onclick="decrypt_text(this.name,this.value)" value="Decrypt Text" class="btn btn-primary" />
+    <br /><br />
 
-    <p>
-      <input type="submit" name="submit_b" value="Encrypt Text" class="btn btn-primary" />
-      <input type="submit" name="submit_b" value="Decrypt Text" class="btn btn-primary" />
-    </p>
-    <br />
     <span class="title">File Encryption:</span>
     <hr />
 
@@ -200,7 +280,6 @@
 
     <input type="submit" name="submit_b" value="Encrypt File" class="btn btn-primary" />
     <input type="submit" name="submit_b" value="Decrypt File" class="btn btn-primary" />
-
     <div id="progress_wrapper" class="d-none">
       <label id="progress_status"></label>
       <div class="progress mb-3">
@@ -217,12 +296,14 @@
                
             
            
-          
-        
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script>
+    document.getElementById('tohide').style.display = 'none';
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script> 
+
+  
 </body>
 
 
