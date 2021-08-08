@@ -1,0 +1,334 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BS-ENCRYPTOR</title>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Powerful encryption for texts and files" />
+    <meta
+      name="keywords"
+      content="AES Encryption,AES,AES Decryption,encryption website,encryption software,encryption online,encryption,encrypt,encrypt text,encrypt files,protect files,protect texts,encryption website,secure files,decryption,decrypt text,decrypt files,encrypt excel file,encrypt word file,encrypt pdf file,encrypt .txt file,encrypt picture,encrypt image file,encrypt and decrypt,encrypt a word document,encrypt csv file,text encryption online,file encryption online,text encryption,file encryption,encrypt data,oussama ben sassi,oussama1403,oussama b.sassi,oussama sassi,bsencryptor,BS-Encryptor,,BS-ENCRYPTOR,encrypt files,powerful encryption"
+    />
+    <meta name="author" content="Oussama ben Sassi" />
+
+    <script src="/static/upload.js"></script>
+    <script src="/static/ajaxcall.js?v="></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300&display=swap" rel="stylesheet" />
+    <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+        background-color: #fcfcfc;
+      }
+      .aboutpage,
+      .prvc,
+      #intro {
+        animation: fadeInAnimation ease 1s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fadeInAnimation {
+        0% {
+          opacity: 0.3;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      nav {
+        box-shadow: 0px 3px 5px -1px rgba(158, 158, 158, 0.84);
+      }
+      a {
+        font-weight: normal;
+        transition: 0.3s ease;
+
+      }
+
+      .navbar-nav > li > a:hover {
+        color: #fa464f !important;
+        border-bottom: 2px solid #fa464f;
+        padding: 6px 0;
+
+      }
+      .navbar-nav > li > a:active {
+        color: #fa464f !important;
+      }
+
+      .navbar-brand:hover {
+        color: #3191f3 !important;
+        border-bottom:2px solid #3191f3;
+        padding:6px 0;
+      }
+      .navbar-brand:active {
+        color: #fa464f !important;
+        border-bottom:2px solid #fa464f;
+        padding:6px 0;
+      }
+      .abtlink {
+        font-weight: 700;
+      }
+      <!--
+      .abtlink:hover {
+        color: #fa464f;
+        font-weight: 700;
+      }-->
+      .content {
+        padding-right: 7%;
+        padding-left: 7%;
+      }
+      .prvc {
+        padding-right: 2%;
+        padding-left: 2%;
+      }
+
+      #intro {
+        text-align: center;
+        color: #796f77;
+        font-weight: bold;
+      }
+
+      .title {
+        font-family: "Nunito Sans", sans-serif;
+        font-size: 25px;
+        color: #0d6efd;
+      }
+
+      input[type="button"],
+      input[type="submit"],
+      input[type="reset"] {
+        cursor: pointer;
+        outline: 0;
+        display: inline-block;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: center;
+        background-color: transparent;
+        border: 1px solid transparent;
+        padding: 16px 32px;
+        font-size: 1rem;
+        border-radius: 0.25rem;
+        transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        color: #0d6efd;
+        border-color: #0d6efd;
+      }
+
+      #upload_btn {
+        color: #fa464f;
+        border-color: #fa464f;
+      }
+
+      #upload_btn:hover {
+        color: #ffffff;
+        background-color: #fa464f;
+        border-color: #fa464f;
+      }
+      @import url(https://fonts.googleapis.com/css?family=Lato);
+      @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);
+
+      ul {
+      padding:0;
+      list-style: none;
+      }
+      .footer-social-icons {
+      display:block;
+      margin: 0 auto;
+      }
+      .social-icon {
+      color: #fff;
+      }
+      ul.social-icons {
+      margin-top: 10px;
+      }
+      .social-icons li {
+      vertical-align: top;
+      display: inline;
+      height: 100px;
+      }
+      .social-icons a {
+      color: #fff;
+      text-decoration: none;
+      }
+      .fa-facebook {
+      padding:18px 24px;
+      -o-transition:.5s;
+      -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
+      transition: .5s;
+      background-color: #322f30;
+      }
+      .fa-facebook:hover {
+      background-color: #3d5b99;
+      }
+
+      .fa-google {
+      padding:18px 24px;
+      -o-transition:.5s;
+      -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
+      transition: .5s;
+      background-color: #322f30;
+      }
+      .fa-google:hover {
+      background-color: red;
+      }
+
+      .fa-github {
+      padding:18px 24px;
+      -o-transition:.5s;
+      -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
+      transition: .5s;
+      background-color: #322f30;
+      }
+      .fa-github:hover {
+      background-color: #5a32a3;
+      }
+      .fa-discord {
+      padding:18px 24px;
+      -o-transition:.5s;
+      -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
+      transition: .5s;
+      background-color: #322f30;
+      }
+      .fa-discord:hover {
+      background-color: #404EED;
+      }
+      .fa-dev {
+      padding:18px 24px;
+      -o-transition:.5s;
+      -ms-transition:.5s;
+      -moz-transition:.5s;
+      -webkit-transition:.5s;
+      transition: .5s;
+      background-color: #322f30;
+      }
+      .fa-dev:hover {
+      background-color: #1A2634;
+      }
+
+
+    </style>
+
+  </head>
+
+  <body>
+    <div class=".col-sm-">
+      <nav class="navbar navbar-light navbar-expand-lg">
+        <a class="navbar-brand" href="/home">BS-ENCRYPTOR</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/home">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/about">About <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/privacy">Privacy Policy <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <br />
+    </div>
+
+
+   
+               
+<div class="prvc">
+<h3>Privacy Policy</h3>
+<p>Last updated: August 08, 2021</p>
+<p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
+<p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy. This Privacy Policy has been created with the help of the <a href="https://www.privacypolicies.com/privacy-policy-generator/" target="_blank">Privacy Policy Generator</a>.</p>
+<h2>THE INFORMATION WE COLLECT</h2>
+<p style="color:#fa464f;font-weight:bold">Any plain-text input or output that you enter or we generate and any file you uploaded is not stored on this site, this tool is provided via an HTTPS URL to ensure that text/file cannot be stolen.</p>
+<h2>Collecting and Using Your Personal Data</h2>
+<h3>Types of Data Collected</h3>
+<h3>Usage Data</h3>
+<p>Usage Data is collected automatically when using the Service.</p>
+<p>Usage Data may include information such as Your Device's Internet Protocol address (e.g. IP address), browser type, browser version, the pages of our Service that You visit, the time and date of Your visit, the time spent on those pages, unique device identifiers and other diagnostic data.</p>
+<p>When You access the Service by or through a mobile device, We may collect certain information automatically, including, but not limited to, the type of mobile device You use, Your mobile device unique ID, the IP address of Your mobile device, Your mobile operating system, the type of mobile Internet browser You use, unique device identifiers and other diagnostic data.</p>
+<p>We may also collect information that Your browser sends whenever You visit our Service or when You access the Service by or through a mobile device.</p>
+<h3>Tracking Technologies and Cookies</h3>
+<p>We use Cookies and similar tracking technologies to track the activity on Our Service and store certain information. Tracking technologies used are beacons, tags, and scripts to collect and track information and to improve and analyze Our Service. The technologies We use may include:</p>
+<ul>
+<li><strong>Cookies or Browser Cookies.</strong> A cookie is a small file placed on Your Device. You can instruct Your browser to refuse all Cookies or to indicate when a Cookie is being sent. However, if You do not accept Cookies, You may not be able to use some parts of our Service. Unless you have adjusted Your browser setting so that it will refuse Cookies, our Service may use Cookies.</li>
+<li><strong>Flash Cookies.</strong> Certain features of our Service may use local stored objects (or Flash Cookies) to collect and store information about Your preferences or Your activity on our Service. Flash Cookies are not managed by the same browser settings as those used for Browser Cookies. For more information on how You can delete Flash Cookies, please read &quot;Where can I change the settings for disabling, or deleting local shared objects?&quot; available at <a href="https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_" rel="external nofollow noopener" target="_blank">https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_</a></li>
+<li><strong>Web Beacons.</strong> Certain sections of our Service and our emails may contain small electronic files known as web beacons (also referred to as clear gifs, pixel tags, and single-pixel gifs) that permit the Company, for example, to count users who have visited those pages or opened an email and for other related website statistics (for example, recording the popularity of a certain section and verifying system and server integrity).</li>
+</ul>
+<p>Cookies can be &quot;Persistent&quot; or &quot;Session&quot; Cookies. Persistent Cookies remain on Your personal computer or mobile device when You go offline, while Session Cookies are deleted as soon as You close Your web browser. Learn more about cookies: <a href="https://www.privacypolicies.com/blog/cookies/" target="_blank">What Are Cookies?</a>.</p>
+<p>We use both Session and Persistent Cookies for the purposes set out below:</p>
+<ul>
+<li>
+<p><strong>Necessary / Essential Cookies</strong></p>
+<p>Type: Session Cookies</p>
+<p>Administered by: Us</p>
+<p>Purpose: These Cookies are essential to provide You with services available through the Website and to enable You to use some of its features. They help to authenticate users and prevent fraudulent use of user accounts. Without these Cookies, the services that You have asked for cannot be provided, and We only use these Cookies to provide You with those services.</p>
+</li>
+<li>
+<p><strong>Cookies Policy / Notice Acceptance Cookies</strong></p>
+<p>Type: Persistent Cookies</p>
+<p>Administered by: Us</p>
+<p>Purpose: These Cookies identify if users have accepted the use of cookies on the Website.</p>
+</li>
+<li>
+<p><strong>Functionality Cookies</strong></p>
+<p>Type: Persistent Cookies</p>
+<p>Administered by: Us</p>
+<p>Purpose: These Cookies allow us to remember choices You make when You use the Website, such as remembering your login details or language preference. The purpose of these Cookies is to provide You with a more personal experience and to avoid You having to re-enter your preferences every time You use the Website.</p>
+</li>
+</ul>
+<p>For more information about the cookies we use and your choices regarding cookies, please visit our Cookies Policy or the Cookies section of our Privacy Policy.</p>
+<h2>Use of Your Personal Data</h2>
+<ul>
+<li>
+<p>We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</p>
+</li>
+</ul>
+<h3>Security of Your Personal Data</h3>
+<p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
+<p>We never store files that you uploaded to our servers.Files will be deleted automatically after encrypting/decrypting and downloading them.
+<h3>Links to Other Websites</h3>
+<p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
+<p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+<h3>Changes to this Privacy Policy</h3>
+<p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
+<p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the &quot;Last updated&quot; date at the top of this Privacy Policy.</p>
+<p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+<h3>Contact Us</h3>
+<p>If you have any questions about this Privacy Policy, You can contact us:</p>
+<ul>
+<li>By email: obensassi.03@gmail.com</li>
+</ul>
+</div>
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+
+</body>
+
+
+</html>
