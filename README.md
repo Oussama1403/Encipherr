@@ -1,5 +1,18 @@
 # BS-ENCRYPTOR
 
+<p>
+  <img  src="https://img.shields.io/github/stars/Oussama1403/BsEncryptor" />
+  <img src="https://img.shields.io/github/contributors/Oussama1403/BsEncryptor" />
+  <img src="https://img.shields.io/github/last-commit/Oussama1403/BsEncryptor" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=Oussama1403.BsEncryptor" />
+  <img src="https://img.shields.io/github/languages/count/Oussama1403/BsEncryptor" />
+  <img src="https://img.shields.io/github/languages/top/Oussama1403/BsEncryptor" />
+
+  <img src="https://img.shields.io/badge/license-MIT-blue.svg?color=f64152" />
+  <img  src="https://img.shields.io/github/issues/Oussama1403/BsEncryptor" />
+  <img  src="https://img.shields.io/github/issues-pr/Oussama1403/BsEncryptor" />
+</p>
+
 it is a web application developed with [flask framework](https://flask.palletsprojects.com/en/2.0.x/) in the backend and [bootstrap](https://getbootstrap.com/) in the frontend and it offers you a powerful encryption of texts or files using [AES](https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard) encryption algorithm.Try it now
 ## Installation
 head over to [bsencryptor website](https://bsencryptor.pythonanywhere.com/) \
