@@ -142,4 +142,4 @@ def privacy():
     return render_template('privacy.html')
 
 if __name__ == '__main__':
-    app.run(host='192.168.1.8',debug=True) #change host ip to yours
+    app.run(host='192.168.1.8',debug=True) #change host ip to yours;in this way you can access the website from any device in your local network.
