@@ -2,12 +2,10 @@ from flask import Flask,flash,request,render_template,url_for,redirect,send_from
 from flask.wrappers import Request
 from werkzeug.utils import secure_filename
 
-
 from cryptography.fernet import Fernet
 import os
 app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
-
 
 UPLOAD_FOLDER = '/home/oussama/Downloads/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -74,7 +72,6 @@ def Decrypt_Text():
         return {"status":"0","value":"Error! Nothing to decrypt,You have to type something!"}
         
     
-
 @app.route('/',methods=['POST','GET'])
 @app.route('/home',methods=['POST','GET'])
 def home():
@@ -121,8 +118,6 @@ def home():
         import random
         id = random.randint(0,1000)
         return render_template('home.html',id=id)
-
-
 
 
 #Return file for downloading,after download it will be deleted.
