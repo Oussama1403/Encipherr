@@ -1,5 +1,38 @@
 # BS-ENCRYPTOR
-a web application developed with flask framework in the backend and bootstrap in the frontend and it offers you a powerful encryption of texts or files using AES encryption algorithm.Try it now https://bsencryptor.pythonanywhere.com/
+
+it is a web application developed with [flask framework](https://flask.palletsprojects.com/en/2.0.x/) in the backend and [bootstrap](https://getbootstrap.com/) in the frontend and it offers you a powerful encryption of texts or files using [AES](https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard) encryption algorithm.Try it now
+## Installation
+head over to [bsencryptor website](https://bsencryptor.pythonanywhere.com/) \
+or install project files and run it locally:
+
+```bash
+git clone https://github.com/Oussama1403/BsEncryptor
+
+```
+## Usage
+The project directory will contain:
+```
+-static (js and css files in this directory)
+-templates (all website pages must be in this directory)
+    -home.html
+    -base.html 
+    -about.html
+    -privacy.html
+-flask_app.py (server file)
+```
+:warning: make sure python3 is installed. \
+to run the server just type in your terminal:
+
+```python
+python3 flask_app.py
+```
 
 ## Contributing
-open an issue on the issue tracker or request a new feature.
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+Shoutout to [@Aziz Becha](https://github.com/AzizVirus) for the update
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
