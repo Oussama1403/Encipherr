@@ -1,1 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+<p id="intro"><span style="color: #3191f3;">BS-ENCRYPTOR</span> is a web application that offers you a powerful encryption of texts or files.Protect your text/files right now!.</p>
+<hr />
+<div class="content">
+  <form id="form" action="#" method="POST" enctype="multipart/form-data">
+    <span class="title">Text Encryption</span>
+    <hr />
 
+    <p>Your key:</p>
+    <p><input id="key" type="text" name="key" value="{{key}}" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" /></p>
+    <input type="button" name="submit_b" onclick="genkey()" value="Generate Key" class="btn btn-primary"/>
+    <br />
+    <br />
+
+    <p>Type Your Text here to encrypt/decrypt:</p>
+    <p><textarea id="txtarea" name="txt" class="form-control" rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm">{{ value }}</textarea></p>
+    <br />
+      <input type="button" name="submit_b" onclick="encrypt_text(this.name,this.value)" value="Encrypt Text" class="btn btn-primary" />
+      <input type="button" name="submit_b" onclick="decrypt_text(this.name,this.value)" value="Decrypt Text" class="btn btn-primary" />
+    <br /><br />
+
+    <span class="title">File Encryption:</span>
+    <hr />
+
+    <label id="exampleInputFile">
+      <b>Max File Size:50mb</b>
+    </label>
+    <input type="file" id="file_input" name="file" class="form-control-file" />
+    <br />
+    <input type="submit" name="submit_b" id="upload_btn" value="Upload Selected File" class="btn btn-primary" />
+
+    <input type="submit" name="submit_b" value="Encrypt File" class="btn btn-primary" />
+    <input type="submit" name="submit_b" value="Decrypt File" class="btn btn-primary" />
+    <div id="progress_wrapper" class="d-none">
+      <label id="progress_status"></label>
+      <div class="progress mb-3">
+        <div id="progress" class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    </div>
+
+    <div id="alert_wrapper"></div>
+  </form>
+  <br />
+  <br />
+</div>
+{% endblock content %}
