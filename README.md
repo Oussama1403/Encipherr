@@ -16,9 +16,10 @@
 ### Made with love using:
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Python](https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 
-it is a web application developed with [flask framework](https://flask.palletsprojects.com/en/2.0.x/) in the backend and [bootstrap](https://getbootstrap.com/) in the frontend and it offers you a powerful encryption of texts or files using [AES](https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard) encryption algorithm.Try it now
+It is a web application developed with <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask Framework</a> in the backend and 
+<a href="https://getbootstrap.com" target="_blank">Bootstrap Framework</a> in the frontend and it offers you a powerful encryption of texts or files using <a href="https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a> encryption algorithm. Try it now
 ## Installation
-head over to [bsencryptor website](https://bsencryptor.pythonanywhere.com/) \
+Head over to <a href="https://bsencryptor.pythonanywhere.com/" target="_blank">bsencryptor website</a> \
 or install project files and run it locally:
 
 ```bash
@@ -28,16 +29,25 @@ git clone https://github.com/Oussama1403/BsEncryptor
 ## Usage
 The project directory will contain:
 ```
--static (js and css files in this directory)
--templates (all website pages must be in this directory)
-    -home.html
-    -base.html 
-    -about.html
-    -privacy.html
--flask_app.py (server file)
+
+├── static
+│   ├── css
+|   └── style.css
+│   ├── js
+|   └── upload.js
+|   └── ajaxcall.js
+├── templates
+│   └── about.html
+│   └── base.html
+│   └── home.html
+│   └── privacy.html
+├── README.md
+├── flask_app.py
+
 ```
-:warning: make sure python3 is installed. \
-to run the server just type in your terminal:
+
+:warning: Make sure python3 is installed. \
+To run the server just type in your terminal:
 
 ```python
 python3 flask_app.py
