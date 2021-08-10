@@ -1,7 +1,11 @@
 body {
     font-family: "Montserrat", sans-serif;
     background-color: #fcfcfc;
-  }
+    min-height: 100vh;
+    margin:0;
+    display:flex; 
+    flex-direction:column;
+}
   
   .aboutpage,
   .prvc,
@@ -215,3 +219,9 @@ body {
   .fa-dev:hover {
     background-color: #1A2634;
   }
+  footer {
+    box-shadow: 0px -1px 5px -1px rgba(158, 158, 158, 0.84);
+    width:100%;
+    bottom: 0;
+    margin-top:auto; 
+}
