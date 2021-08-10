@@ -6,7 +6,7 @@ function genkey() {
             document.getElementById('tohide').style.display = 'none';
         }
 
-        document.getElementById("key").value = d; //will the data
+        document.getElementById("key").value = d; 
     }, 
   });
 }  
