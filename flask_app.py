@@ -5,7 +5,10 @@ from werkzeug.utils import secure_filename
 from cryptography.fernet import Fernet
 import os
 app = Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+
+import os
+secret_key = os.urandom(24)
+app.secret_key = secret_key
 
 UPLOAD_FOLDER = '/home/oussama/Downloads/uploads'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -71,7 +74,8 @@ def Decrypt_Text():
     else:
         return {"status":"0","value":"Error! Nothing to decrypt,You have to type something!"}
         
-    
+#detected a security flaw in file upload code;this code is disabled in the server until i post a fix.
+#for now it returns home.html and a maintenance message when trying to upload a file.   
 @app.route('/',methods=['POST','GET'])
 @app.route('/home',methods=['POST','GET'])
 def home():
