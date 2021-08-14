@@ -147,9 +147,9 @@ def home():
             
             except:
                 flash('Error!, Possible problems: No File To Upload or Key Not Found ')
-                return render_template('home.html',id=session.get("username", 'not set'))
+                return render_template('home.html')
         else:
-            return render_template('home.html',id=session.get("username", 'not set'))
+            return render_template('home.html')
 
     else:
         #setup a guest session when an user enters the website,needed for file upload.
@@ -166,7 +166,7 @@ def home():
 @app.route("/get-file/<file_name>")
 def getfile(file_name):
     path = session.get('path','not set')
-    print(path)
+    #print(path)
     filename = session.get('filename','not set')
     try:
         @after_this_request
@@ -187,10 +187,10 @@ def getfile(file_name):
 
 @app.route("/about")
 def about():
-    return render_template('about.html',id=session.get("username", 'not set'))
+    return render_template('about.html')
 @app.route("/privacy")
 def privacy():
-    return render_template('privacy.html',id=session.get('username', 'not set'))
+    return render_template('privacy.html')
 
 if __name__ == '__main__':
     app.run(host='192.168.1.8',debug=True)
