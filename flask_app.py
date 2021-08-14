@@ -1,37 +1,73 @@
-from flask import Flask,flash,request,render_template,url_for,redirect,send_from_directory,abort,after_this_request
+from flask import Flask,flash,request,render_template,url_for,redirect,send_from_directory,abort,after_this_request,session,Response,stream_with_context
 from flask.wrappers import Request
 from werkzeug.utils import secure_filename
+from flask_session import Session
+from flask_sqlalchemy import SQLAlchemy
 
 from cryptography.fernet import Fernet
-import os
-app = Flask(__name__)
+import os,random,shutil
 
-import os
+app = Flask(__name__)
 secret_key = os.urandom(24)
 app.secret_key = secret_key
 
-UPLOAD_FOLDER = '/home/oussama/Downloads/uploads'
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
+app.config['MAX_CONTENT_LENGTH'] = 10 * 1024 * 1024
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite3"
+app.config['SESSION_TYPE'] = 'sqlalchemy'
+db = SQLAlchemy(app)
+app.config['SESSION_SQLALCHEMY'] = db
+app.config['SESSION_PERMANENT'] = True
+Session(app)
+db.create_all()
+db.session.commit()
 
 #these are called using normal post request from '/' route
+def Upload_file():
+    #create a temp folder with same name as guest username
+    if not request.form["key"] == "":
+        user_name = session.get('username','not set')
+        parent_dir = '/home/oussama/Documents/WORK/PythonWork/BS-Encryptor[WEB]'
+        path = os.path.join(parent_dir, user_name)
+        #create temp dir
+        os.mkdir(path)
+        #---------------
+        uploaded_file = request.files["file"]
+        uploaded_file.save(os.path.join(path,secure_filename(uploaded_file.filename)))
+        filename = secure_filename(uploaded_file.filename)
+        #print(filename)
+        session["path"]=path
+        session["filename"]=filename
+        #print("file uploaded")
+    else:
+        #print("raising error..")
+        #key is not important for upload but if there is no key the file will 
+        #be uploaded but not encrypted/decrypted therefore the file will not be deleted.
+        raise Exception("key not found")    
+    
 def Encrypt_file():
+
+    path = session.get('path','not set')
+    filename = session.get('filename','not set')
+    
     key = request.form["key"]
     fernet = Fernet(key)
-    with open(os.path.join(app.config['UPLOAD_FOLDER'],filename) , 'rb') as f:
+    with open(os.path.join(path,filename) , 'rb') as f:
         data = f.read()
     encryptedfile = fernet.encrypt(data)
-    with open(os.path.join(app.config['UPLOAD_FOLDER'],filename),'wb') as f:
+    with open(os.path.join(path,filename),'wb') as f:
         f.write(encryptedfile)
     return filename
 
 def Decrypt_file():
+    path = session.get('path','not set')
+    filename = session.get('filename','not set')
+    
     key = request.form["key"]
     fernet = Fernet(key)
-    with open(os.path.join(app.config['UPLOAD_FOLDER'],filename) , 'rb') as f:
+    with open(os.path.join(path,filename) , 'rb') as f:
         data = f.read()
     decryptedfile = fernet.decrypt(data)
-    with open(os.path.join(app.config['UPLOAD_FOLDER'],filename),'wb') as f:
+    with open(os.path.join(path,filename),'wb') as f:
         f.write(decryptedfile)
     return filename
 
@@ -74,76 +110,87 @@ def Decrypt_Text():
     else:
         return {"status":"0","value":"Error! Nothing to decrypt,You have to type something!"}
         
-#detected a security flaw in file upload code;this code is disabled in the server until i post a fix.
-#for now it returns home.html and a maintenance message when trying to upload a file.   
+    
 @app.route('/',methods=['POST','GET'])
 @app.route('/home',methods=['POST','GET'])
 def home():
     if request.method == 'POST':
-        global filename
-
-        if request.form["submit_b"] == "Upload Selected File":
+        if request.form["submit_b"] == "Upload and Encrypt":
             try:
-                uploaded_file = request.files["file"]
-                uploaded_file.save(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(uploaded_file.filename)))
-                filename = secure_filename(uploaded_file.filename)
-                print(filename)
-                print('file uploaded successfully')
-                key = request.form["key"]
-                print('file readed successfully')
-                flash('File uploaded successfully!')
-                return render_template('home.html',key = key)
-            except:
-                flash('Error!, Possible problems: No File To Upload!')
-                return redirect(url_for('home'))
-
-        elif request.form["submit_b"] == "Encrypt File":
-            try:
-                filename=Encrypt_file()
+                Upload_file()
+                try:
+                    filename=Encrypt_file()
+                except:
+                    flash('Error in Encryption!, Possible problems : Key Not Found Or File Not Found')
+                    path = session.get('path','not set')
+                    shutil.rmtree(path)
+                    return redirect(url_for('home'))  
+                
                 return redirect(url_for('getfile',file_name=filename))
             except:
-                flash('Error in Encryption!, Possible problems : Key Not Found Or File Not Found')
+                flash('Error!, Possible problems: No File To Upload or Key Not Found!')
                 return redirect(url_for('home'))
-        elif request.form["submit_b"] == "Decrypt File":
+
+        elif request.form["submit_b"] == "Upload and Decrypt":
             try:
-                filename=Decrypt_file()
+                Upload_file()
+                
+                try:
+                    filename=Decrypt_file()
+                except:
+                    flash('Error in Decryption!, Possible problems : Key Not Found,File Not found Or Invalid Key!')
+                    path = session.get('path','not set') 
+                    shutil.rmtree(path)
+                    return redirect(url_for('home'))
+                
                 return redirect(url_for('getfile',file_name=filename))
+            
             except:
-                flash('Error in Decryption!, Possible problems : Key Not Found,File Not found Or Invalid Key!')
-                return redirect(url_for('home'))
+                flash('Error!, Possible problems: No File To Upload or Key Not Found ')
+                return render_template('home.html',id=session.get("username", 'not set'))
         else:
-            return render_template('home.html')
+            return render_template('home.html',id=session.get("username", 'not set'))
 
     else:
-        """
-        random number to append at <script src="ajaxcall.js"/> and <link ..style.css/> Tags
-        to prevent caching css and js file.
-        """
-        import random
-        id = random.randint(0,1000)
-        return render_template('home.html',id=id)
+        #setup a guest session when an user enters the website,needed for file upload.
+        import string
+        user_name = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
+        session["username"] = user_name
+        session["path"] = ""
+        session["filename"] = ""
+        
+        return render_template('home.html')
 
-
-#Return file for downloading,after download it will be deleted.
+    
+#Return file for downloading,after download it will be deleted with the directory
 @app.route("/get-file/<file_name>")
 def getfile(file_name):
+    path = session.get('path','not set')
+    print(path)
+    filename = session.get('filename','not set')
     try:
         @after_this_request
-        def remove_file(response):
-            os.remove(os.path.join(app.config['UPLOAD_FOLDER'],filename))
+        def remove_file_and_dir(response):
+            if os.path.exists(path):
+                shutil.rmtree(path)
+                #os.remove(os.path.join(path,filename))
+                #shutil.rmtree(path)
+                #os.system('rm -rf "{}"'.format(path))
+            session.pop('path')
+            session.pop('filename')
+            
             return response
 
-        return send_from_directory(app.config["UPLOAD_FOLDER"], filename=file_name,as_attachment=True,cache_timeout=0)
+        return send_from_directory(path, filename=file_name,as_attachment=True,cache_timeout=0)
     except FileNotFoundError:
         abort(404)
 
-
 @app.route("/about")
 def about():
-    return render_template('about.html')
+    return render_template('about.html',id=session.get("username", 'not set'))
 @app.route("/privacy")
 def privacy():
-    return render_template('privacy.html')
+    return render_template('privacy.html',id=session.get('username', 'not set'))
 
 if __name__ == '__main__':
-    app.run(host='192.168.1.8',debug=True) #change host ip to yours;in this way you can access the website from any device in your local network.
+    app.run(host='192.168.1.8',debug=True)
