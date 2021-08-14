@@ -26,7 +26,7 @@ def Upload_file():
     #create a temp folder with same name as guest username
     if not request.form["key"] == "":
         user_name = session.get('username','not set')
-        parent_dir = '/home/oussama/Documents/WORK/PythonWork/BS-Encryptor[WEB]'
+        parent_dir = 'path' #set path
         path = os.path.join(parent_dir, user_name)
         #create temp dir
         os.mkdir(path)
@@ -193,4 +193,4 @@ def privacy():
     return render_template('privacy.html')
 
 if __name__ == '__main__':
-    app.run(host='192.168.1.8',debug=True)
+    app.run(host='192.168.1.8',debug=True) #change host ip
