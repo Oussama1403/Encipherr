@@ -16,7 +16,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite3"
 app.config['SESSION_TYPE'] = 'sqlalchemy'
 db = SQLAlchemy(app)
 app.config['SESSION_SQLALCHEMY'] = db
-app.config['SESSION_PERMANENT'] = False
+app.config['SESSION_PERMANENT'] = True
 Session(app)
 db.create_all()
 db.session.commit()
