@@ -1,6 +1,6 @@
 # Change Log
 
-## [Unreleased] 2021-08-14
+## [released] 2021-08-16
  
 ### Added
 - Added guest Sessions when user enters the website.keeping the user actions secure.
