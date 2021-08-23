@@ -1,16 +1,16 @@
-# BS-ENCRYPTOR
+# Encipherr
 
 <p>
-  <img  src="https://img.shields.io/github/stars/Oussama1403/BsEncryptor" />
-  <img src="https://img.shields.io/github/contributors/Oussama1403/BsEncryptor" />
-  <img src="https://img.shields.io/github/last-commit/Oussama1403/BsEncryptor" />
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=Oussama1403.BsEncryptor" />
-  <img src="https://img.shields.io/github/languages/count/Oussama1403/BsEncryptor" />
-  <img src="https://img.shields.io/github/languages/top/Oussama1403/BsEncryptor" />
+  <img  src="https://img.shields.io/github/stars/Oussama1403/Encipherr" />
+  <img src="https://img.shields.io/github/contributors/Oussama1403/Encipherr" />
+  <img src="https://img.shields.io/github/last-commit/Oussama1403/Encipherr" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=Oussama1403.Encipherr" />
+  <img src="https://img.shields.io/github/languages/count/Oussama1403/Encipherr" />
+  <img src="https://img.shields.io/github/languages/top/Oussama1403/Encipherr" />
 
   <img src="https://img.shields.io/badge/license-MIT-blue.svg?color=f64152" />
-  <img  src="https://img.shields.io/github/issues/Oussama1403/BsEncryptor" />
-  <img  src="https://img.shields.io/github/issues-pr/Oussama1403/BsEncryptor" />
+  <img  src="https://img.shields.io/github/issues/Oussama1403/Encipherr" />
+  <img  src="https://img.shields.io/github/issues-pr/Oussama1403/Encipherr" />
 </p>
 
 ### Made with love using:
@@ -19,11 +19,11 @@
 It is a web application developed with <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask Framework</a> in the backend and 
 <a href="https://getbootstrap.com" target="_blank">Bootstrap Framework</a> in the frontend and it offers you a powerful encryption of texts or files using <a href="https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a> encryption algorithm. Try it now
 ## Installation
-Head over to <a href="https://bsencryptor.pythonanywhere.com/" target="_blank">bsencryptor website</a> \
+Head over to <a href="https://Encipherr.pythonanywhere.com/" target="_blank">Encipherr website</a> \
 or install project files and run it locally:
 
 ```bash
-git clone https://github.com/Oussama1403/BsEncryptor
+git clone https://github.com/Oussama1403/Encipherr
 
 ```
 ## Usage
