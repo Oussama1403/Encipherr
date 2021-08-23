@@ -1,8 +1,11 @@
 # Change Log
 
-## [Unreleased] 2021-08-22
+## [released] 2021-08-23
 
-- New name for the website
+- Change app name from bsencryptor to encipherr
+- Small changes in the ui
+- Add title icon
+
 
 
 ## [released] 2021-08-16
