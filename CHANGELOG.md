@@ -5,6 +5,7 @@
 - Change app name from bsencryptor to encipherr
 - Small changes in the ui
 - Add title icon
+- the old website will automatically redirect you to the new one.
 
 
 
