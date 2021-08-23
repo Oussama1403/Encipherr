@@ -1,3 +1,5 @@
+#! /usr/bin/python3.9
+
 from flask import Flask,flash,request,render_template,url_for,redirect,send_from_directory,abort,after_this_request,session,Response,stream_with_context
 from flask.wrappers import Request
 from werkzeug.utils import secure_filename
@@ -26,7 +28,7 @@ def Upload_file():
     #create a temp folder with same name as guest username
     if not request.form["key"] == "":
         user_name = session.get('username','not set')
-        parent_dir = 'path' #set path
+        parent_dir = '/home/oussama/Documents/WORK/PythonWork/Encipherr' #set path
         path = os.path.join(parent_dir, user_name)
         #create temp dir
         os.mkdir(path)
@@ -87,7 +89,7 @@ def Encrypt_Text():
             fernet = Fernet(key)
             plaintext = value.encode()
             encryptedtext = fernet.encrypt(plaintext)
-            return {"status":"1","value":encryptedtext}
+            return {"status":"1","value":encryptedtext.decode()}
         except:
             return {"status":"0","value":"Error in Encryption!, Possible problems : Key Not Found or Invalid Key"}
     else:
@@ -104,7 +106,7 @@ def Decrypt_Text():
             fernet = Fernet(key)
             plaintext = value.encode()
             decryptedtext = fernet.decrypt(plaintext)
-            return {"status":"1","value":decryptedtext}
+            return {"status":"1","value":decryptedtext.decode()}
         except:
             return {"status":"0","value":"Error in Decryption!, Possible problems : Key Not Found or Invalid Key"}
     else:
@@ -173,15 +175,12 @@ def getfile(file_name):
         def remove_file_and_dir(response):
             if os.path.exists(path):
                 shutil.rmtree(path)
-                #os.remove(os.path.join(path,filename))
-                #shutil.rmtree(path)
-                #os.system('rm -rf "{}"'.format(path))
             session.pop('path')
             session.pop('filename')
             
             return response
 
-        return send_from_directory(path, filename=file_name,as_attachment=True,cache_timeout=0)
+        return send_from_directory(directory=path, filename=file_name,as_attachment=True,cache_timeout=0)
     except FileNotFoundError:
         abort(404)
 
