@@ -40,8 +40,8 @@ body {
   }
 
   .navbar-nav > li > a:hover {
-    color: #00e676 !important;
-    border-bottom: 2px solid #00e676;
+    color: #1dd1a1 !important;
+    border-bottom: 2px solid #1dd1a1;
     padding: 6px 0;   
   }
   
@@ -52,8 +52,8 @@ body {
   }
 
   .navbar-brand:hover {
-    color: #00e676 !important;
-    border-bottom:2px solid #00e676;
+    color: #3191f3 !important;
+    border-bottom:2px solid #3191f3;
     padding:6px 0;
   }
   
@@ -81,7 +81,8 @@ body {
 
   #intro {
     text-align: center;
-    color: #130f40;
+    color: #718093;
+    font-weight:bold;
   }
 
   .title {
