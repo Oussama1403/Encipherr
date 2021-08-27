@@ -1,27 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-<p id="intro"><span style="color: #3191f3;font-weight:bold">Encipherr</span> is a web application that offers you a powerful encryption of texts or files.Protect your text/files right now!.</p>
+<!-- <p id="intro"><span style="color: #3191f3;font-weight:bold">Encipherr</span> is a web application that offers you a powerful encryption of texts or files.Protect your text/files right now!.</p>-->
+<p id="intro" class="text-center"><span style="color: #3191f3;font-weight:bold">Encipherr</span> provide you a free powerful encryption of texts and files.<span style="color:#495F7C">Secure your data right now!.</span></p>
+
 <hr style="width:100%;margin-bottom:16px;margin-top:0"/>
 <div class="container">
   <form id="form" action="#" method="POST" enctype="multipart/form-data">
-    <span class="title">Text Encryption</span>
+    <h4 class="title">Text Encryption</h4>
     <hr style="margin-bottom:16px;margin-top:10px" />
 
-
-    <p>Your key:</p>
-    <p><input id="key" type="text" name="key" value="{{key}}" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" /></p>
+    <p><input id="key" type="text" name="key" value="{{key}}" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Your key" /></p>
     <input type="button" name="submit_b" onclick="genkey()" value="Generate Key" class="btn btn-primary"/>
     <br />
     <br />
-
-    <p>Type Your Text here to encrypt/decrypt:</p>
-    <p><textarea id="txtarea" name="txt" class="form-control" rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm">{{ value }}</textarea></p>
-    <br />
+    
+    <p><textarea id="txtarea" name="txt" class="form-control" rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Type your text here">{{ value }}</textarea></p>
       <input type="button" name="submit_b" onclick="encrypt_text(this.name,this.value)" value="Encrypt Text" class="btn btn-primary" />
       <input type="button" name="submit_b" onclick="decrypt_text(this.name,this.value)" value="Decrypt Text" class="btn btn-primary" />
     <br /><br />
 
-    <span class="title">File Encryption:</span>
+    <h4 class="title">File Encryption:</h4>
     <hr style="margin-bottom:16px;margin-top:10px" />
 
 
