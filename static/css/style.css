@@ -52,8 +52,8 @@ body {
   }
 
   .navbar-brand:hover {
-    color: #3191f3 !important;
-    border-bottom:2px solid #3191f3;
+    color: #1dd1a1 !important;
+    border-bottom:2px solid #1dd1a1;
     padding:6px 0;
   }
   
@@ -80,14 +80,12 @@ body {
   }
 
   #intro {
-    text-align: center;
     color: #718093;
     font-weight:bold;
   }
   
   .title {
     font-family: 'Quicksand', sans-serif;
-    font-size: 25px;
     color: #0d6efd;
   }
 
@@ -122,10 +120,7 @@ body {
   }
   @import url(https://fonts.googleapis.com/css?family=Lato);
   
-  /*No need because it's already imported on the head*/
- /* @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css);*/
-  
-  ul {
+ ul {
    padding:0;
    list-style: none;
   }
