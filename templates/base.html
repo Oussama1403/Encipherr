@@ -36,13 +36,19 @@
     
     <script src="/static/js/upload.js"></script>
     <script src="/static/js/ajaxcall.js?v=0001"></script>
-    <link rel="stylesheet" href="/static/css/style.css?v=0004" />
-  
+    <link rel="stylesheet" href="/static/css/style.css?v=0007" />
+    
+    <!-- pwa -->
+    
+    <link rel="manifest" href="/static/manifest.json" />
+    <script src="/static/app.js"></script>
+    
   </head>
 
   <body>
+    
     <div class="">
-      <nav class="navbar navbar-light navbar-expand-lg">
+      <nav class="navbar fixed-top navbar-light navbar-expand-lg">
         <a class="navbar-brand" href="{{url_for('home')}}" style="font-weight:bold;letter-spacing:3px">Encipherr</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
