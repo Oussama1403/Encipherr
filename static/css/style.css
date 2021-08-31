@@ -1,6 +1,7 @@
 body {
     font-family: "Montserrat", sans-serif;
     background-color: #fcfcfc;
+    padding-top: 55px; 
     min-height: 100vh;
     margin:0;
     display:flex; 
@@ -26,6 +27,7 @@ body {
 
   nav {
     box-shadow: 0px 3px 5px -1px rgba(158, 158, 158, 0.84);
+    background-color:white;
   }
   footer {
     box-shadow: 0px -1px 5px -1px rgba(158, 158, 158, 0.84);
@@ -39,9 +41,14 @@ body {
     transition: 0.3s ease;
   }
 
+.navbar-nav > li > a {
+    color: #2d3436 !important;
+    letter-spacing:1px;
+    padding: 6px 0;   
+  }
   .navbar-nav > li > a:hover {
-    color: #1dd1a1 !important;
-    border-bottom: 2px solid #1dd1a1;
+    color: #6c5ce7 !important;
+    border-bottom: 2px solid #6c5ce7;
     padding: 6px 0;   
   }
   
@@ -52,9 +59,8 @@ body {
   }
 
   .navbar-brand:hover {
-    color: #1dd1a1 !important;
-    border-bottom:2px solid #1dd1a1;
-    padding:6px 0;
+    color: #6c5ce7 !important;
+    border-bottom:2px solid #6c5ce7;
   }
   
   .navbar-brand:active {
