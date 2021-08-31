@@ -1,4 +1,4 @@
-#! /usr/bin/python3.9
+#! /usr/bin/python3.8
 
 from flask import Flask,flash,request,render_template,url_for,redirect,send_from_directory,abort,after_this_request,session,Response,stream_with_context
 from flask.wrappers import Request
@@ -180,9 +180,17 @@ def getfile(file_name):
             
             return response
 
-        return send_from_directory(directory=path, filename=file_name,as_attachment=True,cache_timeout=0)
+        return send_from_directory(directory=path, path=file_name,as_attachment=True,cache_timeout=0)
     except FileNotFoundError:
         abort(404)
+
+@app.route('/sw.js',methods=["GET","POST"])
+def service_worker():
+    from flask import make_response
+    response = make_response(send_from_directory('.',path='sw.js'))
+    response.headers['Content-Type'] = 'application/javascript'
+    response.headers['Service-Worker-Allowed'] = '/'
+    return response
 
 @app.route("/about")
 def about():
