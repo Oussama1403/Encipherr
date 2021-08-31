@@ -1,5 +1,14 @@
 # Change Log
 
+## [released] 2021-08-31
+
+- Encipherr is now a progressive web app.
+- few changes in the frontend; navbar hover style changed and position is set to fixed-top.
+- set 1px letter-spacing to navbar links.
+- intro phrase changed.
+
+
+
 ## [released] 2021-08-23
 
 - Change app name from bsencryptor to encipherr
