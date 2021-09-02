@@ -18,15 +18,14 @@
 
 It is a web application developed with <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask Framework</a> in the backend and 
 <a href="https://getbootstrap.com" target="_blank">Bootstrap Framework</a> in the frontend and it offers you a powerful encryption of texts or files using <a href="https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a> encryption algorithm. Try it now
-## Installation
-Head over to <a href="https://Encipherr.pythonanywhere.com/" target="_blank">Encipherr website</a> \
+## Usage
+Visit <a href="https://Encipherr.pythonanywhere.com/" target="_blank">Encipherr website</a> \
 or install project files and run it locally:
 
 ```bash
 git clone https://github.com/Oussama1403/Encipherr
 
 ```
-## Usage
 The project directory will contain:
 ```
 
@@ -46,8 +45,8 @@ The project directory will contain:
 
 ```
 
-:warning: Make sure python3 is installed. \
-To run the server just type in your terminal:
+:warning: Make sure python3 and flask framework are installed. \
+then run the server by typing in your terminal:
 
 ```python
 python3 flask_app.py
