@@ -8,14 +8,12 @@
   "theme_color" : "#146EFC",
   "display": "standalone",
   "start_url": "/",
-  "background_color": "transparent",
-  "theme_color": "transparent",
   "description": "Powerful encryption for texts and files",
   "orientation": "any",
   "prefer_related_applications": false,
   "icons": [
     {
-      "src": "512x512.png",
+      "src": "512x512-blue.png",
       "type": "image/png",
       "sizes": "512x512"
     }
