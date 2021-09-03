@@ -29,19 +29,27 @@ git clone https://github.com/Oussama1403/Encipherr
 The project directory will contain:
 ```
 
-├── static
-│   ├── css
-|   └── style.css
-│   ├── js
-|   └── upload.js
-|   └── ajaxcall.js
-├── templates
-│   └── about.html
-│   └── base.html
-│   └── home.html
-│   └── privacy.html
-├── README.md
+├── CHANGELOG.md
+├── db.sqlite3
 ├── flask_app.py
+├── README.md
+├── static
+│   ├── 512x512-blue.png
+│   ├── 512x512.png
+│   ├── app.js
+│   ├── css
+│   │   └── style.css
+│   ├── js
+│   │   ├── ajaxcall.js
+│   │   └── upload.js
+│   ├── logo.png
+│   └── manifest.json
+├── sw.js
+└── templates
+    ├── about.html
+    ├── base.html
+    ├── home.html
+    └── privacy.html
 
 ```
 
