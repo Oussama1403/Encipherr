@@ -5,7 +5,7 @@
   "short_name": "Encipherr",
   "scope": "/",
   "background_color" : "#FCFCFC",
-  "theme_color" : "#146EFC",
+  "theme_color" : "#2d3436",
   "display": "standalone",
   "start_url": "/",
   "description": "Powerful encryption for texts and files",
