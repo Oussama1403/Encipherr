@@ -1,7 +1,7 @@
 # Change Log
 ## [released] 2021-09-03
 - Added an offline page when there is no internet connection.
-- Update the service worker for the offline page use.
+- Update the service worker for offline page usage.
 - Minor changes to the frontend.
 
 ## [released] 2021-08-31
