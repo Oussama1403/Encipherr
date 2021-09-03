@@ -13,10 +13,10 @@ var networkFirstFiles = [
   // 'index.html',
   // 'build/build.js',
   // 'css/index.css'
-  'static/js/ajaxcall.js',
-  'static/js/upload.js',
-  'static/css/style.css',
-  'static/512x512.png'
+  'templates/home.html,
+  'templates/about.html',
+  'templates/privacy.html',
+  'templates/base.html'
 ];
 
 // Below is the service worker code.
