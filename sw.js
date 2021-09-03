@@ -13,7 +13,7 @@ var networkFirstFiles = [
   // 'index.html',
   // 'build/build.js',
   // 'css/index.css'
-  'templates/home.html,
+  'templates/home.html',
   'templates/about.html',
   'templates/privacy.html',
   'templates/base.html'
