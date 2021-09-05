@@ -1,1 +1,22 @@
+{
+  "dir": "ltr",
+  "lang": "en",
+  "name": "Encipherr",
+  "short_name": "Encipherr",
+  "scope": "/",
+  "background_color" : "#FCFCFC",
+  "theme_color" : "#2f3640",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "Powerful encryption for texts and files",
+  "orientation": "any",
+  "prefer_related_applications": false,
+  "icons": [
+    {
+      "src": "512x512-blue.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
 
