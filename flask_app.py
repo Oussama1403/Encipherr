@@ -200,4 +200,4 @@ def privacy():
     return render_template('privacy.html')
 
 if __name__ == '__main__':
-    app.run(host='192.168.1.8',debug=True) #change host ip
+    app.run(debug=True)
