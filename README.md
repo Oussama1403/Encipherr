@@ -34,16 +34,18 @@ The project directory will contain:
 ├── flask_app.py
 ├── README.md
 ├── static
-│   ├── 512x512-blue.png
-│   ├── 512x512.png
-│   ├── app.js
 │   ├── css
 │   │   └── style.css
 │   ├── js
 │   │   ├── ajaxcall.js
 │   │   └── upload.js
 │   ├── logo.png
-│   └── manifest.json
+│   └── pwa
+│       ├── 512x512-blue.png
+│       ├── 512x512.png
+│       ├── app.js
+│       ├── manifest.json
+│       └── offline.html
 ├── sw.js
 └── templates
     ├── about.html
