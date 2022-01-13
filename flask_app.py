@@ -1,4 +1,4 @@
-#! /usr/bin/python3.8
+#! /usr/bin/python3.9
 
 from flask import Flask,flash,request,render_template,url_for,redirect,send_from_directory,abort,after_this_request,session,Response,stream_with_context
 from flask.wrappers import Request
@@ -23,7 +23,7 @@ Session(app)
 db.create_all()
 db.session.commit()
 
-#these are called using normal post request from '/' route
+#these are called using normal post request from '(/' route
 def Upload_file():
     #create a temp folder with same name as guest username
     if not request.form["key"] == "":
@@ -112,11 +112,20 @@ def Decrypt_Text():
     else:
         return {"status":"0","value":"Error! Nothing to decrypt,You have to type something!"}
         
-    
+def SetupGuestSession():
+    #setup a guest session when an user enters the website,needed for file upload.
+    import string
+    user_name = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
+    session["username"] = user_name
+    session["path"] = ""
+    session["filename"] = ""  
+
 @app.route('/',methods=['POST','GET'])
 @app.route('/home',methods=['POST','GET'])
 def home():
     if request.method == 'POST':
+        SetupGuestSession()
+        print("setting up guest session")
         if request.form["submit_b"] == "Upload and Encrypt":
             try:
                 Upload_file()
@@ -154,13 +163,6 @@ def home():
             return render_template('home.html')
 
     else:
-        #setup a guest session when an user enters the website,needed for file upload.
-        import string
-        user_name = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
-        session["username"] = user_name
-        session["path"] = ""
-        session["filename"] = ""
-        
         return render_template('home.html')
 
     
@@ -184,6 +186,7 @@ def getfile(file_name):
     except FileNotFoundError:
         abort(404)
 
+
 @app.route('/sw.js',methods=["GET","POST"])
 def service_worker():
     from flask import make_response
@@ -192,6 +195,10 @@ def service_worker():
     response.headers['Service-Worker-Allowed'] = '/'
     return response
 
+@app.route("/offline")
+def offline():
+    return render_template('offline.html')
+    
 @app.route("/about")
 def about():
     return render_template('about.html')
@@ -200,4 +207,4 @@ def privacy():
     return render_template('privacy.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True) #change host ip
