@@ -112,20 +112,11 @@ def Decrypt_Text():
     else:
         return {"status":"0","value":"Error! Nothing to decrypt,You have to type something!"}
         
-def SetupGuestSession():
-    #setup a guest session when an user enters the website,needed for file upload.
-    import string
-    user_name = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
-    session["username"] = user_name
-    session["path"] = ""
-    session["filename"] = ""  
-
+    
 @app.route('/',methods=['POST','GET'])
 @app.route('/home',methods=['POST','GET'])
 def home():
     if request.method == 'POST':
-        SetupGuestSession()
-        print("setting up guest session")
         if request.form["submit_b"] == "Upload and Encrypt":
             try:
                 Upload_file()
@@ -163,6 +154,13 @@ def home():
             return render_template('home.html')
 
     else:
+        #setup a guest session when an user enters the website,needed for file upload.
+        import string
+        user_name = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
+        session["username"] = user_name
+        session["path"] = ""
+        session["filename"] = ""
+        
         return render_template('home.html')
 
     
