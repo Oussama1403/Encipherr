@@ -1,4 +1,10 @@
 # Change Log
+
+## 2022-03-19
+
+- Offline page redesigned.
+- Minor changes in the frontend.
+
 ## [released] 2021-09-03
 - Added an offline page when there is no internet connection.
 - Update the service worker for offline page usage.
