@@ -86,8 +86,9 @@ body {
   }
 
   #intro {
-    color: #718093;
-    font-weight:bold;
+    color:#495F84;
+    letter-spacing: 1.3px;
+    font-weight:600;
   }
   
   .title {
