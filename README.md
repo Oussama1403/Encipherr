@@ -67,7 +67,7 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
-Shoutout to [@Aziz Becha](https://github.com/AzizVirus) for the update
+Shoutout to [@Aziz Becha](https://github.com/azizbecha) for the update
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
