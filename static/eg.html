@@ -61,7 +61,7 @@
       
       $.ajax(settings).done(function (response) {
         data = JSON.parse(response);
-        var i = Math.floor(Math.random() * 14);
+        var i = Math.floor(Math.random() * data.length);
         document.getElementById("quote").innerHTML=data[i]["text"];
       });
       
