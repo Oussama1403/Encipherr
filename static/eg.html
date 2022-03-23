@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> ツ </title>
+    <!-- meta tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- import font -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap" rel="stylesheet"/>
+
+    <style>    
+      
+      body {
+      display: grid;
+      place-items: center;
+      height: 100vh;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2em;
+      background: #fcfcfc;
+      }        
+      
+      p {
+      color:#3E3E3E;
+      letter-spacing:2px;
+      font-size: 35px;
+      }
+      
+      #quote {
+      animation: fadeInAnimation ease 1s;
+      animation-iteration-count: 1;
+      animation-fill-mode: forwards;
+      }
+
+     @keyframes fadeInAnimation {
+       0% {
+         opacity: 0.3;
+       }
+       100% {
+         opacity: 1;
+       }
+      }
+    
+    </style>
+    
+  </head>
+
+  <body>
+      <p id="quote"></p>
+    <script>
+      
+      const settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://gist.githubusercontent.com/Oussama1403/329a20f5895ff8dce6f90513a1d15492/raw/5853b568b3aee8ecd33b24cbf8829974349d6d7c/quotes.json",
+      "method": "GET"
+       }
+      
+      $.ajax(settings).done(function (response) {
+        data = JSON.parse(response);
+        var i = Math.floor(Math.random() * 14);
+        document.getElementById("quote").innerHTML=data[i]["text"];
+      });
+      
+    </script>
+  </body>
+</html>
