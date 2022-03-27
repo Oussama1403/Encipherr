@@ -95,6 +95,12 @@ body {
     font-family: 'Quicksand', sans-serif;
     color: #0d6efd;
   }
+  
+  .title-abt {  
+    font-family: 'Quicksand';
+    color: #4d5966;
+    font-weight: bold;
+  }    
 
   input[type="button"],
   input[type="submit"],
