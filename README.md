@@ -17,7 +17,7 @@
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Python](https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
 
 Encipherr is a web application developed with <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a> & 
-<a href="https://getbootstrap.com" target="_blank">Bootstrap Framework</a> and it offers a free powerful encryption of texts and files using <a href="https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a> encryption algorithm.Try it now.
+<a href="https://getbootstrap.com" target="_blank">Bootstrap Framework</a>.It offers a free powerful encryption of texts and files using <a href="https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a> encryption algorithm.Try it now.
 ## Usage
 Visit <a href="https://Encipherr.pythonanywhere.com/" target="_blank">Encipherr website</a> \
 or install project files and run it locally:
