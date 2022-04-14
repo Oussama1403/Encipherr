@@ -1,26 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
-<p id="intro" class="text-center"><span style="color: #1abc9c">Advanced</span> online encryption and decryption tool</p>
 
-<hr style="width:100%;margin-bottom:16px;margin-top:0"/>
 <div class="container">
+  <p id="intro" class="text-center">Free online encryption and decryption tool</p>
+  <hr style="width:100%;margin-bottom:16px;margin-top:0"/>
+  
   <form id="form" action="#" method="POST" enctype="multipart/form-data">
     <h4 class="title">Text Encryption</h4>
-    <hr style="margin-bottom:16px;margin-top:10px" />
 
     <p><input id="key" type="text" name="key" value="{{key}}" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Your key" /></p>
-    <input type="button" name="submit_b" onclick="genkey()" value="Generate Key" class="btn btn-primary"/>
+    <input id="btn" type="button" name="submit_b" onclick="genkey()" value="Generate Key" class="btn btn-primary"/>
     <br />
     <br />
     
     <p><textarea id="txtarea" name="txt" class="form-control" rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Type your text here">{{ value }}</textarea></p>
-      <input type="button" name="submit_b" onclick="encrypt_text(this.name,this.value)" value="Encrypt Text" class="btn btn-primary" />
-      <input type="button" name="submit_b" onclick="decrypt_text(this.name,this.value)" value="Decrypt Text" class="btn btn-primary" />
+      <input id="btn" type="button" name="submit_b" onclick="encrypt_text(this.name,this.value)" value="Encrypt Text" class="btn btn-primary" />
+      <input id="btn" type="button" name="submit_b" onclick="decrypt_text(this.name,this.value)" value="Decrypt Text" class="btn btn-primary" />
     <br /><br />
 
     <h4 class="title">File Encryption:</h4>
-    <hr style="margin-bottom:16px;margin-top:10px" />
+    <!--<hr style="margin-bottom:16px;margin-top:10px" />-->
 
 
     <label id="exampleInputFile">
@@ -29,7 +29,7 @@
     <input type="file" id="file_input" name="file" class="form-control-file" />
     <br />
     <input id="upload_btn" type="submit" name="submit_b" value="Upload and Encrypt" class="btn btn-primary" />
-    <input id="upload_btn"d type="submit" name="submit_b" value="Upload and Decrypt" class="btn btn-primary" />
+    <input id="upload_btn" type="submit" name="submit_b" value="Upload and Decrypt" class="btn btn-primary" />
     <div id="progress_wrapper" class="d-none">
       <label id="progress_status"></label>
       <div class="progress mb-3">
