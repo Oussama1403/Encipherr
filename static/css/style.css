@@ -73,67 +73,79 @@ body {
     font-weight: 700;
   }
   
-  /*
-  .abtlink:hover {
-    color: #fa464f;
-    font-weight: 700;
-  }*/
-  
-
   .prvc {
     padding-right: 2%;
     padding-left: 2%;
   }
 
   #intro {
-    color:#495F84;
+    color:#383c4a	;
     letter-spacing: 1.3px;
-    font-weight:600;
+    font-weight:bold;
   }
   
   .title {
     font-family: 'Quicksand', sans-serif;
-    color: #0d6efd;
+    padding-bottom:20px;
+    color: #383c4a	;
+  
   }
   
   .title-abt {  
     font-family: 'Quicksand';
-    color: #4d5966;
+    color: #383c4a;
     font-weight: bold;
   }    
 
-  input[type="button"],
-  input[type="submit"],
-  input[type="reset"] {
+  input[type="button"],input[type="submit"] {
     cursor: pointer;
     outline: 0;
     display: inline-block;
-    font-weight: 400;
+    font-family: 'Montserrat',sans-serif;
+    font-weight: bold;
     line-height: 1.5;
     text-align: center;
     background-color: transparent;
-    border: 1px solid transparent;
+    border: 1px solid;
     padding: 16px 32px;
+    margin: 4px;
+    margin-left: 0px;
     font-size: 1rem;
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    color: #0d6efd;
-    border-color: #0d6efd;
   }
-
+  
+  #btn {
+    color: #383c4a	; 
+    border-color: #383c4a	;
+  }
+  #btn:hover {
+    color: #f3f0f2	!important ;
+    background-color: #23272a	;
+    border-color: #23272a	;
+  }
+  #btn:focus {
+    color: #f3f0f2	!important ;
+    background-color: #23272a	;
+    border-color: #23272a	;
+  }
+  
   #upload_btn {
     color: #1abc9c;
     border-color: #1abc9c;
   }
-
   #upload_btn:hover {
     color: #ffffff;
     background-color: #00e676;
     border-color: #00e676;
   }
-  @import url(https://fonts.googleapis.com/css?family=Lato);
+
+  input[type="text"],#txtarea {
+    border: 1px solid transparent ;
+    border-bottom-color:#1F2833;
+  } 
   
- ul {
+  ul {
    padding:0;
    list-style: none;
   }
