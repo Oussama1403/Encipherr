@@ -1,5 +1,9 @@
 # Change Log
 
+## 2022-04-14
+
+- Small update to the ui.
+
 ## 2022-03-23
 
 - All releases deleted for a new version numbering scheme.
