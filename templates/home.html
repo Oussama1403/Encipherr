@@ -9,12 +9,12 @@
   <form id="form" action="#" method="POST" enctype="multipart/form-data">
     <h4 class="title">Text Encryption</h4>
 
-    <p><input id="key" type="text" name="key" value="{{key}}" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Your key" /></p>
+    <p><input id="key" type="text" name="key" value="{{key}}" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Key of the encryption" /></p>
     <input id="btn" type="button" name="submit_b" onclick="genkey()" value="Generate Key" class="btn btn-primary"/>
     <br />
     <br />
     
-    <p><textarea id="txtarea" name="txt" class="form-control" rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Type your text here">{{ value }}</textarea></p>
+    <p><textarea id="txtarea" name="txt" class="form-control" rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Plain or encrypted text here">{{ value }}</textarea></p>
       <input id="btn" type="button" name="submit_b" onclick="encrypt_text(this.name,this.value)" value="Encrypt Text" class="btn btn-primary" />
       <input id="btn" type="button" name="submit_b" onclick="decrypt_text(this.name,this.value)" value="Decrypt Text" class="btn btn-primary" />
     <br /><br />
