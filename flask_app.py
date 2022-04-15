@@ -106,7 +106,12 @@ def Decrypt_Text():
             fernet = Fernet(key)
             plaintext = value.encode()
             decryptedtext = fernet.decrypt(plaintext)
-            return {"status":"1","value":decryptedtext.decode()}
+            #decrypt one more if the text is still encrypted with the same key.
+            while True:
+                try:
+                    decryptedtext = fernet.decrypt(decryptedtext)
+                except:
+                    return {"status":"1","value":decryptedtext.decode()}
         except:
             return {"status":"0","value":"Error in Decryption!, Possible problems : Key Not Found or Invalid Key"}
     else:
@@ -208,4 +213,4 @@ def privacy():
     return render_template('privacy.html')
 
 if __name__ == '__main__':
-    app.run(debug=True) #change host ip
+    app.run("192.168.1.13",debug=True) #change host ip
