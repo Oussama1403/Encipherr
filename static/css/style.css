@@ -141,6 +141,7 @@ body {
   }
 
   input[type="text"],#txtarea {
+    background-color: transparent;
     border: 1px solid transparent ;
     border-bottom-color:#1F2833;
   } 
