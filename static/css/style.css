@@ -1,4 +1,5 @@
-body {
+  
+  body {
     font-family: "Montserrat", sans-serif;
     background-color: #fcfcfc;
     padding-top: 55px; 
@@ -6,16 +7,14 @@ body {
     margin:0;
     display:flex; 
     flex-direction:column;
-} 
+  } 
 
-.aboutpage,
-.prvc,
-#intro {
+  /* fade animation */
+  .abt_prvc,#intro {
     animation: fadeInAnimation ease 1s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
   }
-
   @keyframes fadeInAnimation {
     0% {
       opacity: 0.3;
@@ -25,6 +24,7 @@ body {
     }
   }
 
+  /* navbar & footer */
   nav {
     box-shadow: 0px 3px 5px -1px rgba(158, 158, 158, 0.84);
     background-color:white;
@@ -34,14 +34,21 @@ body {
     width:100%;
     bottom: 0;
     margin-top:auto; 
-}
-  
+  }
   a {
     font-weight: normal;
     transition: 0.3s ease;
   }
-
-.navbar-nav > li > a {
+  .navbar-brand:hover {
+    color: #6c5ce7 !important;
+    border-bottom:2px solid #6c5ce7;
+  }
+  .navbar-brand:active {
+    color: #01AC59 !important;
+    border-bottom: 2px solid #01AC59;    
+    padding:6px 0;
+  }
+  .navbar-nav > li > a {
     color: #2d3436 !important;
     letter-spacing:1px;
     padding: 6px 0;   
@@ -51,52 +58,12 @@ body {
     border-bottom: 2px solid #6c5ce7;
     padding: 6px 0;   
   }
-  
   .navbar-nav > li > a:active {
     color: #01AC59 !important;
     border-bottom: 2px solid #01AC59;
-
   }
 
-  .navbar-brand:hover {
-    color: #6c5ce7 !important;
-    border-bottom:2px solid #6c5ce7;
-  }
-  
-  .navbar-brand:active {
-    color: #01AC59 !important;
-    border-bottom: 2px solid #01AC59;    
-    padding:6px 0;
-  }
-  
-  .abtlink {
-    font-weight: 700;
-  }
-  
-  .prvc {
-    padding-right: 2%;
-    padding-left: 2%;
-  }
-
-  #intro {
-    color:#383c4a	;
-    letter-spacing: 1.3px;
-    font-weight:bold;
-  }
-  
-  .title {
-    font-family: 'Quicksand', sans-serif;
-    padding-bottom:20px;
-    color: #383c4a	;
-  
-  }
-  
-  .title-abt {  
-    font-family: 'Quicksand';
-    color: #383c4a;
-    font-weight: bold;
-  }    
-
+  /* buttons */
   input[type="button"],input[type="submit"] {
     cursor: pointer;
     outline: 0;
@@ -114,7 +81,6 @@ body {
     border-radius: 0.25rem;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
-  
   #btn {
     color: #383c4a	; 
     border-color: #383c4a	;
@@ -126,8 +92,9 @@ body {
   }
   #btn:focus {
     color: #f3f0f2	!important ;
-    background-color: #23272a	;
+    background-color: #2e3438	;
     border-color: #23272a	;
+    box-shadow: none;
   }
   
   #upload_btn {
@@ -139,37 +106,63 @@ body {
     background-color: #00e676;
     border-color: #00e676;
   }
-
-  input[type="text"],#txtarea {
+  #upload_btn:focus {
+    background-color: #05ff86;
+    box-shadow: none;
+  }
+  
+  /* input fields */
+  .form-control:focus {
+    box-shadow: none;
+  }
+  #key,#txtarea {
     background-color: transparent;
     border: 1px solid transparent ;
     border-bottom-color:#1F2833;
   } 
-  
+  #key:hover,#key:focus,#txtarea:hover,#txtarea:focus {
+    background-color: transparent;
+    border: 1px solid transparent ;
+    border-color:#1F2833;
+  }   
+
+  /* home */
+  #intro {
+    color:#383c4a	;
+    letter-spacing: 1.3px;
+    font-weight:bold;
+  }
+  .title {
+    font-family: 'Quicksand', sans-serif;
+    padding-bottom:20px;
+    color: #383c4a	;
+  }
+
+  /* about */
+  .title-abt {  
+    font-family: 'Quicksand';
+    color: #383c4a;
+    font-weight: bold;
+  }   
   ul {
    padding:0;
    list-style: none;
   }
-  
   .footer-social-icons {
     display:block;
     margin: 0 auto;
   }
-  
   .social-icon {
     color: #fff;
   }
-  
   ul.social-icons {
     margin-top: 10px;
   }
-  
   .social-icons li {
     vertical-align: top;
     display: inline;
     height: 100px;
   }
-  
   .social-icons a {
     color: #fff;
     text-decoration: none;
