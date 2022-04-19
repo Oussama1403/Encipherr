@@ -1,11 +1,14 @@
+function HideErrorMsg() {
+  if (document.getElementById('tohide').style.display == 'block') {
+    document.getElementById('tohide').style.display = 'none';
+    }
+}
+
 function genkey() {
   $.ajax("/genkey", {
     type: 'GET',  // http method
     success: function(d){
-        if (document.getElementById('tohide').style.display == 'block') {
-            document.getElementById('tohide').style.display = 'none';
-        }
-
+        HideErrorMsg()
         document.getElementById("key").value = d; 
     }, 
   });
@@ -20,14 +23,18 @@ function encrypt_text(name,value) {
   dict[name]=value;
   dict["key"]=key;
   dict["value"]=text;
-
+  
+  //if ( document.getElementById('key').value == ""){
+  //   document.getElementById('key').style.borderBottomColor = 'red';
+  //   return;
+  //}
 
   $.ajax("/encrypttext", {
     contentType: "application/json",
     type: 'POST',  // http method
     data: JSON.stringify(dict),  // data to submit
     success: function(d){
-        
+        HideErrorMsg()
         if (d["status"] == "1"){
             document.getElementById("txtarea").value = d["value"];
         }  
@@ -57,6 +64,7 @@ function decrypt_text(name,value) {
     type: 'POST',  // http method
     data: JSON.stringify(dict),  // data to submit
     success: function(d){
+        HideErrorMsg()
         if (d["status"] == "1"){
             document.getElementById("txtarea").value = d["value"];
         }  
