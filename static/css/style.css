@@ -134,6 +134,7 @@
   }
   .title {
     font-family: 'Quicksand', sans-serif;
+    font-weight:bold;
     padding-bottom:20px;
     color: #383c4a	;
   }
