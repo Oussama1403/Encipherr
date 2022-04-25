@@ -91,10 +91,9 @@ def Encrypt_Text():
             encryptedtext = fernet.encrypt(plaintext)
             return {"status":"1","value":encryptedtext.decode()}
         except:
-            return {"status":"0","value":"Error in Encryption!, Possible problems : Key Not Found or Invalid Key"}
+            return {"status":"0","value":"Encryption failed! , possible problem: key not found or invalid key"}
     else:
-        return {"status":"0","value":"Error! Nothing to encrypt,You have to type something!"}
-
+        return {"status":"0","value":"Encryption failed! , No text to encrypt, please type something"}
 
 @app.route('/decrypttext',methods=['POST'])
 def Decrypt_Text():
@@ -113,9 +112,9 @@ def Decrypt_Text():
                 except:
                     return {"status":"1","value":decryptedtext.decode()}
         except:
-            return {"status":"0","value":"Error in Decryption!, Possible problems : Key Not Found or Invalid Key"}
+            return {"status":"0","value":"Decryption failed! , possible problem: key not found or invalid key"}
     else:
-        return {"status":"0","value":"Error! Nothing to decrypt,You have to type something!"}
+        return {"status":"0","value":"Decryption failed! , No text to decrypt, please type something"}
         
 def SetupGuestSession():
     #setup a guest session when an user enters the website,needed for file upload.
@@ -137,14 +136,14 @@ def home():
                 try:
                     filename=Encrypt_file()
                 except:
-                    flash('Error in Encryption!, Possible problems : Key Not Found Or File Not Found')
+                    flash('Encryption failed! , possible problem: key not found or invalid key')
                     path = session.get('path','not set')
                     shutil.rmtree(path)
                     return redirect(url_for('home'))  
                 
                 return redirect(url_for('getfile',file_name=filename))
             except:
-                flash('Error!, Possible problems: No File To Upload or Key Not Found!')
+                flash('Upload failed! , possible problem: no file to upload or key not found')
                 return redirect(url_for('home'))
 
         elif request.form["submit_b"] == "Upload and Decrypt":
@@ -154,7 +153,7 @@ def home():
                 try:
                     filename=Decrypt_file()
                 except:
-                    flash('Error in Decryption!, Possible problems : Key Not Found,File Not found Or Invalid Key!')
+                    flash('Decryption failed! , possible problem: key not found or invalid key')
                     path = session.get('path','not set') 
                     shutil.rmtree(path)
                     return redirect(url_for('home'))
@@ -162,7 +161,7 @@ def home():
                 return redirect(url_for('getfile',file_name=filename))
             
             except:
-                flash('Error!, Possible problems: No File To Upload or Key Not Found ')
+                flash('Upload failed! , possible problem: no file to upload or key not found')
                 return render_template('home.html')
         else:
             return render_template('home.html')
