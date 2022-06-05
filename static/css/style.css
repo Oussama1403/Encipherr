@@ -120,6 +120,10 @@
     border: 1px solid transparent ;
     border-bottom-color:#1F2833;
   } 
+  #key::selection,#txtarea::selection {
+    color: white;
+    background: #383c4a;
+  }
   #key:hover,#key:focus,#txtarea:hover,#txtarea:focus {
     background-color: transparent;
     border: 1px solid transparent ;
