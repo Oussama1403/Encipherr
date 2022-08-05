@@ -199,10 +199,10 @@ def service_worker():
     response.headers['Service-Worker-Allowed'] = '/'
     return response
 
-#test for offline page
-#@app.route("/offline")
-#def offline():
-#   return render_template('offline.html')
+#url for offline page
+@app.route("/offline")
+def offline():
+   return render_template('offline.html')
     
 @app.route("/about")
 def about():
@@ -212,4 +212,4 @@ def privacy():
     return render_template('privacy.html')
 
 if __name__ == '__main__':
-    app.run("192.168.1.13",debug=True) #change host ip
+    app.run(debug=True) #change host ip

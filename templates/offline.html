@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>offline</title>
+    
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/static/offline/style.css" />
+    <script src="/static/offline/test.js"></script>
+
+</head>
+<body>
+    <div class="container">
+
+    <h4 class="title">Text Encryption</h4>
+    
+    <p><input id="key" type="text" name="key" value="{{key}}" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Key of the encryption" /></p>
+    <input id="btn" type="button" name="submit_b" onclick="genkey()" value="Generate Key" class="btn btn-primary"/>
+    <br />
+    <br />
+        
+    <p><textarea id="txtarea" name="txt" class="form-control" rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Plain or encrypted text here">{{ value }}</textarea></p>
+    <input id="btn" type="button" name="submit_b" onclick="encrypt_text(this.name,this.value)" value="Encrypt Text" class="btn btn-primary" />
+    <input id="btn" type="button" name="submit_b" onclick="decrypt_text(this.name,this.value)" value="Decrypt Text" class="btn btn-primary" />
+    </div>
+</body>
+</html>
