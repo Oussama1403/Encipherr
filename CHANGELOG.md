@@ -2,7 +2,8 @@
 
 ## 2022-08-07
 - Encipherr can be used offline o_o .*( Thanks to Pyscript )*
-
+- Added docstrings to the main python file
+- few ui changes
 ## 2022-04-14
 
 - Small update to the ui.
