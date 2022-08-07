@@ -1,6 +1,6 @@
 # Change Log
 
-## 2022-08-07
+## [not-released] 2022-08-07
 - Encipherr can be used offline o_o .*( Thanks to Pyscript )*
 - Added docstrings to the main python file
 - few ui changes
