@@ -4,27 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>offline</title>
+    <title>Encipherr</title>
     
-    <!-- bootstrap -->
+    <!-- bootstrap and external files  -->
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
-    <link rel="stylesheet" href="/static/offline/style.css" />
-    <script src="/static/offline/test.js"></script>
+    <link rel="stylesheet" href="/static/offline/style.css?v=1" />
 
 </head>
+
 <body>
+    <!-- Pyscript import -->
+    
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+        
+    <!-- pyscript code -->
+
+    <py-env>
+        - cryptography    
+    </py-env> 
+
+    <py-script src="/static/offline/modules.py"></py-script>
+
     <div class="container">
 
     <h4 class="title">Text Encryption</h4>
     
-    <p><input id="key" type="text" name="key" value="{{key}}" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Key of the encryption" /></p>
-    <input id="btn" type="button" name="submit_b" onclick="genkey()" value="Generate Key" class="btn btn-primary"/>
+    <p><textarea id="key" type="text" name="key" class="form-control" rows="1" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Key of the encryption"></textarea></p>
+    <input class="btn" id="genkey" type="button" pys-onClick="genkey" value="Generate Key" class="btn btn-primary"/>
     <br />
     <br />
         
-    <p><textarea id="txtarea" name="txt" class="form-control" rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Plain or encrypted text here">{{ value }}</textarea></p>
-    <input id="btn" type="button" name="submit_b" onclick="encrypt_text(this.name,this.value)" value="Encrypt Text" class="btn btn-primary" />
-    <input id="btn" type="button" name="submit_b" onclick="decrypt_text(this.name,this.value)" value="Decrypt Text" class="btn btn-primary" />
+    <p><textarea id="text" name="text" class="form-control" rows="7" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Plain or encrypted text here"></textarea></p>
+    <input class="btn" id="encrypt" type="button"  pys-onClick="encrypt_text" value="Encrypt Text" class="btn btn-primary" />
+    <input class="btn" id="decrypt" type="button"  pys-onClick="decrypt_text" value="Decrypt Text" class="btn btn-primary" />
     </div>
+    
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-dark text-center p-2" style="background-color: #E0E0E0">
+          © <script>document.write(new Date().getFullYear())</script> Copyright
+          <a class="text-dark" href="https://github.com/Oussama1403">Oussama Ben Sassi</a>
+        </div>
+    </footer>
+
 </body>
 </html>

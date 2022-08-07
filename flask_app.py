@@ -199,7 +199,7 @@ def service_worker():
     response.headers['Service-Worker-Allowed'] = '/'
     return response
 
-#url for offline page
+# url for offline page
 @app.route("/offline")
 def offline():
    return render_template('offline.html')
