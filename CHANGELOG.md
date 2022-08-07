@@ -1,7 +1,7 @@
 # Change Log
 
 ## 2022-08-07
-- Encipherr can be used offline.*( Thanks to Pyscript )*
+- Encipherr can be used offline o_o .*( Thanks to Pyscript )*
 
 ## 2022-04-14
 

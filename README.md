@@ -40,30 +40,36 @@ git clone https://github.com/Oussama1403/Encipherr
 ```
 The project directory will contain:
 ```
-
 ├── CHANGELOG.md
 ├── db.sqlite3
 ├── flask_app.py
 ├── README.md
 ├── static
-│   ├── css
-│   │   └── style.css
-│   ├── js
-│   │   ├── ajaxcall.js
-│   │   └── upload.js
-│   ├── logo.png
-│   └── pwa
-│       ├── 512x512-blue.png
-│       ├── 512x512.png
-│       ├── app.js
-│       ├── manifest.json
-│       └── offline.html
+│   ├── css
+│   │   └── style.css
+│   ├── eg.html
+│   ├── js
+│   │   ├── ajaxcall.js
+│   │   ├── egg.js
+│   │   └── upload.js
+│   ├── logo.png
+│   ├── offline
+│   │   ├── modules.py
+│   │   └── style.css
+│   └── pwa
+│       ├── 512x512-blue.png
+│       ├── 512x512.png
+│       ├── app.js
+│       ├── manifest.json
+│       └── offline.html
 ├── sw.js
-└── templates
-    ├── about.html
-    ├── base.html
-    ├── home.html
-    └── privacy.html
+├── templates
+│   ├── about.html
+│   ├── base.html
+│   ├── home.html
+│   ├── offline.html
+│   └── privacy.html
+└── TODO.md
 
 ```
 
