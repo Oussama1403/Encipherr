@@ -87,7 +87,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to test your changes.
 
-Shoutout to [@Aziz Becha](https://github.com/azizbecha) for the update
-
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
