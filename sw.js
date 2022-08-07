@@ -5,7 +5,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 const CACHE = "1.0";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const assets = ["/offline","/static/offline/style.css","/static/offline/test.js","/static/offline/modules.py"];
+const assets = ["/offline","/static/offline/style.css","/static/offline/modules.py"];
 const offlineFallbackPage = "/offline"
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
@@ -28,6 +28,9 @@ self.addEventListener('fetch', event => {
   if (!event.request.url.startsWith(self.location.origin) || event.request.method !== 'GET') {
     // External request, or POST, ignore
     return void event.respondWith(fetch(event.request));
+  }
+  if (event.request.url.startsWith(self.location.origin+"/get-file/")) {
+    return false;
   }
 
   event.respondWith(
