@@ -6,7 +6,7 @@ importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox
 const CACHE = "1.0";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const assets = ["/offline","/static/offline/style.css","/static/offline/modules.py"];
+const assets = ["/offline","/static/offline/style.css","/static/offline/modules.py","https://cdn.jsdelivr.net/pyodide/v0.20.0/full/pyodide.asm.js","https://pyscript.net/alpha/pyscript.js"];
 const offlineFallbackPage = "/offline"
 self.addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
