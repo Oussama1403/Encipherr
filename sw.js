@@ -2,6 +2,7 @@
 
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
+
 const CACHE = "1.0";
 
 // TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
@@ -25,9 +26,9 @@ if (workbox.navigationPreload.isSupported()) {
 }
 
 self.addEventListener('fetch', event => {
-  if (!event.request.url.startsWith(self.location.origin) || event.request.method !== 'GET') {
+  if (!event.request.url.startsWith(self.location.origin)  || event.request.method !== 'GET') {
     // External request, or POST, ignore
-    return void event.respondWith(fetch(event.request));
+    return false;
   }
   if (event.request.url.startsWith(self.location.origin+"/get-file/")) {
     return false;
@@ -37,7 +38,7 @@ self.addEventListener('fetch', event => {
     // Always try to download from server first
     fetch(event.request).then(response => {
       // When a download is successful cache the result
-      /*caches.open(CACHE).then(cache => {
+      /* caches.open(CACHE).then(cache => {
         cache.put(event.request, response)
       });*/
       // And of course display it
