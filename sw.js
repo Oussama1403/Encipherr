@@ -25,40 +25,32 @@ if (workbox.navigationPreload.isSupported()) {
   workbox.navigationPreload.enable();
 }
 
-self.addEventListener('fetch', event => {
-  if (!event.request.url.startsWith(self.location.origin)  || event.request.method !== 'GET') {
-    // External request, or POST, ignore
-    return false;
-  }
-  if (event.request.url.startsWith(self.location.origin+"/get-file/")) {
-    return false;
-  }
 
-  event.respondWith(
-    // Always try to download from server first
-    fetch(event.request).then(response => {
-      // When a download is successful cache the result
-      /* caches.open(CACHE).then(cache => {
-        cache.put(event.request, response)
-      });*/
-      // And of course display it
-      return response.clone();
-    }).catch((_err) => {
-      // A failure probably means network access issues
-      // See if we have a cached version
-      return caches.match(event.request).then(cachedResponse => {
-        if (cachedResponse) {
-          // We did have a cached version, display it
-          return cachedResponse;
+addEventListener('fetch', (event) => {
+    const { request } = event;
+  
+    // Always bypass for range requests, due to browser bugs
+    if (request.headers.has('range')) return;
+    event.respondWith(async function() {
+      // Try to get from the cache:
+      const cachedResponse = await caches.match(request);
+      if (cachedResponse) return cachedResponse;
+  
+      try {
+        // See https://developers.google.com/web/updates/2017/02/navigation-preload#using_the_preloaded_response
+        const response = await event.preloadResponse;
+        if (response) return response;
+  
+        // Otherwise, get from the network
+        return await fetch(request);
+      } catch (err) {
+        // If this was a navigation, show the offline page:
+        if (request.mode === 'navigate') {
+          return caches.match('/offline');
         }
-
-        // We did not have a cached version, display offline page
-        return caches.open(CACHE).then((cache) => {
-          const offlineRequest = new Request(offlineFallbackPage);
-          return cache.match(offlineRequest);
-        });
-      });
-    })
-  );
-});
-
+  
+        // Otherwise throw
+        throw err;
+      }
+    }());
+  });
