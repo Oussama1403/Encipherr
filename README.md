@@ -73,13 +73,13 @@ then run the server by typing in your terminal:
 ```python
 python3 flask_app.py
 ```
+## CHANGELOG
+Read the latest notable changes made to a Encipherr.[here](CHANGELOG.md)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to test your changes.
-
-Shoutout to [@Aziz Becha](https://github.com/azizbecha) for the update
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
