@@ -203,11 +203,6 @@ def service_worker():
     response.headers['Service-Worker-Allowed'] = '/'
     return response
 
-# route for offline page:files under this route will be cached and only called when offline.
-@app.route("/offline")
-def offline():
-   return render_template('offline.html')
-    
 @app.route("/about")
 def about():
     return render_template('about.html')
