@@ -190,7 +190,7 @@ def getfile(file_name):
             
             return response
 
-        return send_from_directory(directory=path, path=file_name,as_attachment=True,cache_timeout=0)
+        return send_from_directory(directory=path, path=file_name,as_attachment=True,max_age=0)
     except FileNotFoundError:
         abort(404)
 
