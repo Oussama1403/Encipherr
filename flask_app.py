@@ -23,31 +23,29 @@ Session(app)
 db.create_all()
 db.session.commit()
 
-#these are called using normal post request from '/' route
+# functions that are called using normal post request from '/' route
+
 def Upload_file():
-    #create a temp folder with same name as guest username
+    """Upload the file from the client to ther server"""
+
     if not request.form["key"] == "":
         user_name = session.get('username','not set')
         parent_dir = '/home/oussama/Documents/WORK/PythonWork/Encipherr' #set path
-        path = os.path.join(parent_dir, user_name)
-        #create temp dir
-        os.mkdir(path)
-        #---------------
+        path = os.path.join(parent_dir, user_name) # temporary folder with same name as guest username
+        os.mkdir(path) #create temp dir
+        
         uploaded_file = request.files["file"]
-        uploaded_file.save(os.path.join(path,secure_filename(uploaded_file.filename)))
-        filename = secure_filename(uploaded_file.filename)
-        #print(filename)
-        session["path"]=path
+        uploaded_file.save(os.path.join(path,secure_filename(uploaded_file.filename))) # save file to the temp dir
+        filename = secure_filename(uploaded_file.filename) # get filename
+        session["path"]=path 
         session["filename"]=filename
-        #print("file uploaded")
     else:
-        #print("raising error..")
-        #key is not important for upload but if there is no key the file will 
-        #be uploaded but not encrypted/decrypted therefore the file will not be deleted.
-        raise Exception("key not found")    
+        raise Exception("key not found") # no key specified - raise error - the file will be deleted.   
     
 def Encrypt_file():
-
+    """Encrypt uploaded file"""
+    
+    # get filename from path generated before
     path = session.get('path','not set')
     filename = session.get('filename','not set')
     
@@ -61,6 +59,8 @@ def Encrypt_file():
     return filename
 
 def Decrypt_file():
+    """Decrypt uploaded file"""
+
     path = session.get('path','not set')
     filename = session.get('filename','not set')
     
@@ -73,9 +73,11 @@ def Decrypt_file():
         f.write(decryptedfile)
     return filename
 
-#these are called using ajax
+# functions that are called using ajax request
+
 @app.route('/genkey',methods=['GET'])
 def genkey():
+    """Generate random key"""
     key = Fernet.generate_key()
     return key.decode()
 
@@ -105,7 +107,7 @@ def Decrypt_Text():
             fernet = Fernet(key)
             plaintext = value.encode()
             decryptedtext = fernet.decrypt(plaintext)
-            #decrypt one more if the text is still encrypted with the same key.
+            # Decrypt text until get an unencrypted text ( useful when the text is encrypted multiple times )
             while True:
                 try:
                     decryptedtext = fernet.decrypt(decryptedtext)
@@ -117,7 +119,8 @@ def Decrypt_Text():
         return {"status":"0","value":"Decryption failed! , No text to decrypt, please type something"}
         
 def SetupGuestSession():
-    #setup a guest session when an user enters the website,needed for file upload.
+    """Setup a guest session when an user enters the website, only for file upload"""
+    
     import string
     user_name = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
     session["username"] = user_name
@@ -127,9 +130,10 @@ def SetupGuestSession():
 @app.route('/',methods=['POST','GET'])
 @app.route('/home',methods=['POST','GET'])
 def home():
+    """Handle all incoming post/get requests"""
+    
     if request.method == 'POST':
         SetupGuestSession()
-        print("setting up guest session")
         if request.form["submit_b"] == "Upload and Encrypt":
             try:
                 Upload_file()
@@ -170,9 +174,9 @@ def home():
         return render_template('home.html')
 
     
-#Return file for downloading,after download it will be deleted with the directory
 @app.route("/get-file/<file_name>")
 def getfile(file_name):
+    """Return file for downloading,after download it will be deleted with the directory"""
     path = session.get('path','not set')
     #print(path)
     filename = session.get('filename','not set')
@@ -199,10 +203,10 @@ def service_worker():
     response.headers['Service-Worker-Allowed'] = '/'
     return response
 
-#test for offline page
-#@app.route("/offline")
-#def offline():
-#   return render_template('offline.html')
+# route for offline page:files under this route will be cached and only called when offline.
+@app.route("/offline")
+def offline():
+   return render_template('offline.html')
     
 @app.route("/about")
 def about():
@@ -212,4 +216,4 @@ def privacy():
     return render_template('privacy.html')
 
 if __name__ == '__main__':
-    app.run(debug=True) #change host ip
+    app.run(debug=True)
