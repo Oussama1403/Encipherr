@@ -5,6 +5,26 @@
 <div class="container">
   <p id="intro" class="text-center">Free online encryption and decryption tool</p>
    
+  <!-- error message used by AJAX -->
+  <div id="tohide" style="display:none">
+    <div class="container">
+        <div class="alert alert-warning">
+            <button type="button" class="close" onclick="close_msg()">&times;</button>
+            <div id="message" style="text-align:center"></div>
+          </div>
+    </div>
+  </div>
+
+  <!-- error message used by flask -->
+  <div class="container">
+       {% for message in get_flashed_messages() %}
+       <div class="alert alert-warning">
+           <button type="button" class="close" data-dismiss="alert">&times;</button>
+           <div style="text-align:center">{{ message }}</div>
+       </div>
+       {% endfor %}
+  </div>
+  
   <hr style="width:100%;margin-bottom:16px;margin-top:0"/>
   
   <form id="form" action="#" method="POST" enctype="multipart/form-data">
