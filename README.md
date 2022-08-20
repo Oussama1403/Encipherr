@@ -67,7 +67,12 @@ The project directory will contain:
 
 ```
 
-:warning: Make sure python3 and flask framework are installed. \
+:warning: Make sure python3 and flask framework are installed.
+
+install modules:
+```bash
+pip install -r requirements.txt
+```
 then run the server by typing in your terminal:
 
 ```python
