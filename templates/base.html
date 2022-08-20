@@ -44,7 +44,7 @@
     <script src="/static/js/ajaxcall.js?v=0001"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/egg.js/1.0/egg.min.js"></script>
     <script src="/static/js/egg.js"></script>
-    <link rel="stylesheet" href="/static/css/style.css?v=0007" />
+    <link rel="stylesheet" href="/static/css/style.css?v=0008" />
     
     <!-- pwa -->
     
@@ -79,31 +79,9 @@
     </div>
                 
                 
-                <!-- error message used by AJAX -->
-                <div id="tohide" style="display:none">
-                    <div class="container">
-                        <div class="alert alert-warning">
-                            <button type="button" class="close" onclick="close_msg()">&times;</button>
-                            <span id="message"></span>
-                          </div>
-                    
-                    </div>
-                </div>
-                
-                <!-- error message used by flask -->
-                <div class="container">
-                    {% for message in get_flashed_messages() %}
-                    <div class="alert alert-warning">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        {{ message }}
-                    </div>
-                    {% endfor %}
-                </div>
-               {% block content %}{% endblock content %} 
+    {% block content %}{% endblock content %} 
                
             
-
-
 <footer class="bg-light text-center text-lg-start">
   <div class="text-dark text-center p-2" style="background-color: #E0E0E0">
     © <script>document.write(new Date().getFullYear())</script> Copyright

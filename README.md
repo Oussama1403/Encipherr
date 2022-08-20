@@ -40,6 +40,7 @@ git clone https://github.com/Oussama1403/Encipherr
 ```
 The project directory will contain:
 ```
+
 ├── CHANGELOG.md
 ├── db.sqlite3
 ├── flask_app.py
@@ -47,15 +48,10 @@ The project directory will contain:
 ├── static
 │   ├── css
 │   │   └── style.css
-│   ├── eg.html
 │   ├── js
 │   │   ├── ajaxcall.js
-│   │   ├── egg.js
 │   │   └── upload.js
 │   ├── logo.png
-│   ├── offline
-│   │   ├── modules.py
-│   │   └── style.css
 │   └── pwa
 │       ├── 512x512-blue.png
 │       ├── 512x512.png
@@ -63,13 +59,11 @@ The project directory will contain:
 │       ├── manifest.json
 │       └── offline.html
 ├── sw.js
-├── templates
-│   ├── about.html
-│   ├── base.html
-│   ├── home.html
-│   ├── offline.html
-│   └── privacy.html
-└── TODO.md
+└── templates
+    ├── about.html
+    ├── base.html
+    ├── home.html
+    └── privacy.html
 
 ```
 
@@ -79,13 +73,13 @@ then run the server by typing in your terminal:
 ```python
 python3 flask_app.py
 ```
-## CHANGELOG
-Read the latest notable changes made to a Encipherr.[here](CHANGELOG.md)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to test your changes.
+
+Shoutout to [@Aziz Becha](https://github.com/azizbecha) for the update
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
