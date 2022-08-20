@@ -1,8 +1,12 @@
 # Change Log
 
+## 2022-08-20
+
+- Update to work with Flask 2.2.2
+
 ## 2022-08-08
 
-- code imporvements
+- Code imporvements
 
 ## 2022-04-14
 
