@@ -197,7 +197,7 @@
     background-color: red;
   }
   
-  .fa-github {
+  .social-icon .fa-github {
     padding:18px 24px;
     -o-transition:.5s;
     -ms-transition:.5s;
@@ -207,8 +207,11 @@
     background-color: #322f30;
   }
   
-  .fa-github:hover {
+  .social-icon .fa-github:hover {
     background-color: #5a32a3;
+  }
+  .navbar-nav .fa-github {
+    font-size:xx-large;
   }
 
   .fa-discord {
