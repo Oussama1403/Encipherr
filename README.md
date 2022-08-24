@@ -44,7 +44,10 @@
 [![screenshot](screenshot.png)](https://encipherr.pythonanywhere.com/)
 
 Encipherr is a web application developed with <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask</a> & 
-<a href="https://getbootstrap.com" target="_blank">Bootstrap Framework</a>.It offers a free powerful encryption of texts and files using <a href="https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a> encryption algorithm.Try it now.
+<a href="https://getbootstrap.com" target="_blank">Bootstrap Framework</a>.It offers a free powerful encryption of texts and files using <a href="https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard" target="_blank">AES</a> encryption algorithm. 
+AES is both fast, and cryptographically strong. It is a good default choice for encryption.
+Try Encipherr now.
+
 ## Usage
 Visit <a href="https://Encipherr.pythonanywhere.com/" target="_blank">Encipherr website</a> \
 or install project files and run it locally:
