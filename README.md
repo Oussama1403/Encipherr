@@ -4,7 +4,7 @@
   </a>
  
   <p align="center">
-    <b>Free online encryption and decryption tool!</b>
+    Free online encryption and decryption tool.
     <br>
     <a href="https://encipherr.pythonanywhere.com/"><strong>encipherr.pythonanywhere.com</strong></a>
   </p>
