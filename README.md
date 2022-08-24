@@ -2,15 +2,15 @@
   <a href="https://encipherr.pythonanywhere.com/">
     <img src="https://github.com/Oussama1403/Encipherr/blob/main/static/pwa/512x512-blue.png" width="100">
   </a>
+  <h3 align="center">Encipherr</h3>
+
  
   <p align="center">
     Free online encryption and decryption tool.
     <br>
-    <a href="https://encipherr.pythonanywhere.com/"><strong>encipherr.pythonanywhere.com</strong></a>
+    <a href="https://encipherr.pythonanywhere.com/"><strong>encipherr »</strong></a>
   </p>
 </p>
-
-# Encipherr 
 
 <p>
   <img  src="https://img.shields.io/github/stars/Oussama1403/Encipherr" />
