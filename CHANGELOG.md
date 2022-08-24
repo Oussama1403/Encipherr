@@ -1,5 +1,12 @@
 # Change Log
 
+## 2022-08-24
+
+- Organize project files: main project files moved to project-src/
+- README Updated: Added a Screenshot, Updated project SHIELDS
+- Added LICENSE file (MIT)
+- Added Requirements File
+
 ## 2022-08-20
 
 - Update to work with Flask 2.2.2
