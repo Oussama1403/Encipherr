@@ -20,10 +20,19 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+[contributors-shield]: https://img.shields.io/github/contributors/Oussama1403/Encipherr.svg?style=for-the-badge
+[contributors-url]: https://github.com/Oussama1403/Encipherr/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Oussama1403/Encipherr.svg?style=for-the-badge
+[forks-url]: https://github.com/Oussama1403/Encipherr/network/members
+[stars-shield]: https://img.shields.io/github/stars/Oussama1403/Encipherr.svg?style=for-the-badge
+[stars-url]: https://github.com/Oussama1403/Encipherr/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Oussama1403/Encipherr.svg?style=for-the-badge
+[issues-url]: https://github.com/Oussama1403/Encipherr/issues
+[license-shield]: https://img.shields.io/github/license/Oussama1403/Encipherr.svg?style=for-the-badge
 
-[![Contributors][contributors-shield]][github.com/Oussama1403/Encipherr]
+[![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][github.com/Oussama1403/Encipherr]
+[![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 [![LinkedIn][linkedin-shield]][linkedin-url]
