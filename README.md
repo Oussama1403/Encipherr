@@ -28,7 +28,8 @@
 [stars-url]: https://github.com/Oussama1403/Encipherr/stargazers
 [issues-shield]: https://img.shields.io/github/issues/Oussama1403/Encipherr.svg?style=for-the-badge
 [issues-url]: https://github.com/Oussama1403/Encipherr/issues
-
+[license-shield]: https://img.shields.io/github/license/Oussama1403/Encipherr.svg?style=for-the-badge
+[license-url]: https://github.com/Oussama1403/Encipherr/blob/main/LICENSE.txt
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
