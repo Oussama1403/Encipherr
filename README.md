@@ -12,18 +12,11 @@
   </p>
 </p>
 
-<p>
-  <img  src="https://img.shields.io/github/stars/Oussama1403/Encipherr" />
-  <img src="https://img.shields.io/github/contributors/Oussama1403/Encipherr" />
-  <img src="https://img.shields.io/github/last-commit/Oussama1403/Encipherr" />
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=Oussama1403.Encipherr" />
-  <img src="https://img.shields.io/github/languages/count/Oussama1403/Encipherr" />
-  <img src="https://img.shields.io/github/languages/top/Oussama1403/Encipherr" />
-
-  <img src="https://img.shields.io/badge/license-MIT-blue.svg?color=f64152" />
-  <img  src="https://img.shields.io/github/issues/Oussama1403/Encipherr" />
-  <img  src="https://img.shields.io/github/issues-pr/Oussama1403/Encipherr" />
-</p>
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
 ### Made with love using:
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Python](https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
