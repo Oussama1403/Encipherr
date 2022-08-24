@@ -3,7 +3,7 @@
 ## 2022-08-24
 
 - Organize project files: main project files moved to project-src/
-- README Updated: Added a Screenshot, Updated project SHIELDS
+- README Updated: Added a Screenshot, Updated project SHIELDS, Update Project Tree
 - Added LICENSE file (MIT)
 - Added Requirements File
 
