@@ -1,5 +1,9 @@
 # Change Log
 
+## 2022-08-25
+
+- Update about section.
+
 ## 2022-08-24
 
 - Organize project files: main project files moved to project-src/
