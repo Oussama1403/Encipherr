@@ -8,7 +8,7 @@
   <p align="center">
     Free online encryption and decryption tool.
     <br>
-    <a href="https://encipherr.pythonanywhere.com/"><strong>encipherr »</strong></a>
+    <a href="https://encipherr.pythonanywhere.com/"><strong> Explore Encipherr »</strong></a>
   </p>
 </p>
 
