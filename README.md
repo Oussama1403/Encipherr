@@ -10,6 +10,7 @@
     <br>
     <a href="https://encipherr.pythonanywhere.com/"><strong>encipherr »</strong></a>
   </p>
+</p>
 
 <!-- PROJECT SHIELDS -->
 <!--
@@ -19,6 +20,8 @@
 *** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
 *** https://www.markdownguide.org/basic-syntax/#reference-style-links
 -->
+<div align="center">
+
 [contributors-shield]: https://img.shields.io/github/contributors/Oussama1403/Encipherr.svg?style=for-the-badge
 [contributors-url]: https://github.com/Oussama1403/Encipherr/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Oussama1403/Encipherr.svg?style=for-the-badge
@@ -36,7 +39,7 @@
 [![Issues][issues-shield]][issues-url]
 [![MIT License][license-shield]][license-url]
 
-</p>
+</div>
 
 ### Made with love using:
 ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Python](https://img.shields.io/badge/python-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white) ![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
