@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://encipherr.pythonanywhere.com/">
-    <img src="https://github.com/Oussama1403/Encipherr/blob/main/project-src/static/pwa/512x512-blue.png" width="100">
+    <img src="https://github.com/Oussama1403/Encipherr/blob/main/src/static/pwa/512x512-blue.png" width="100">
   </a>
   <h3 align="center">Encipherr</h3>
 
