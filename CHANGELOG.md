@@ -1,5 +1,8 @@
 # Change Log
-
+## 2022-08-27
+- Restructure the project from Single module structure to Package structure (necessary improvements to allow the project to grow or scale.)
+- Cleaner code to ease writing, reading and maintaining the project.
+- few other bugs fixed.
 ## 2022-08-25
 
 - Update about section.

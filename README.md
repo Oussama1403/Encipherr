@@ -65,35 +65,40 @@ git clone https://github.com/Oussama1403/Encipherr
 ```
 The project directory will contain:
 ```
+
 ├── CHANGELOG.md
 ├── LICENSE.txt
-├── project-src
-│   ├── db.sqlite3
-│   ├── flask_app.py
-│   ├── static
-│   │   ├── css
-│   │   │   └── style.css
-│   │   ├── eg.html
-│   │   ├── js
-│   │   │   ├── ajaxcall.js
-│   │   │   ├── egg.js
-│   │   │   └── upload.js
-│   │   ├── logo.png
-│   │   └── pwa
-│   │       ├── 512x512-blue.png
-│   │       ├── 512x512.png
-│   │       ├── app.js
-│   │       ├── manifest.json
-│   │       └── offline.html
-│   ├── sw.js
-│   └── templates
-│       ├── about.html
-│       ├── base.html
-│       ├── home.html
-│       └── privacy.html
+├── main.py
 ├── README.md
 ├── requirements.txt
-└── screenshot.png
+├── screenshot.png
+└── src
+    ├── app.py
+    ├── config.py
+    ├── db.sqlite3
+    ├── modules.py
+    ├── routes.py
+    ├── static
+    │   ├── css
+    │   │   └── style.css
+    │   ├── eg.html
+    │   ├── js
+    │   │   ├── ajaxcall.js
+    │   │   ├── egg.js
+    │   │   └── upload.js
+    │   ├── logo.png
+    │   └── pwa
+    │       ├── 512x512-blue.png
+    │       ├── 512x512.png
+    │       ├── app.js
+    │       ├── manifest.json
+    │       └── offline.html
+    ├── sw.js
+    └── templates
+        ├── about.html
+        ├── base.html
+        ├── home.html
+        └── privacy.html
 
 ```
 
@@ -106,7 +111,7 @@ pip install -r requirements.txt
 then run the server by typing in your terminal:
 
 ```python
-python3 flask_app.py
+python3 main.py
 ```
 ## CHANGELOG
 Read the latest notable changes made to a Encipherr [here](CHANGELOG.md)
