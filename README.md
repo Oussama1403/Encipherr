@@ -98,6 +98,8 @@ The project directory will contain:
         ├── about.html
         ├── base.html
         ├── home.html
+        ├── page-404.html
+        ├── page-500.html
         └── privacy.html
 
 ```
