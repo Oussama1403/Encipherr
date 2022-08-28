@@ -1,6 +1,6 @@
 """ App Routing """
 
-from flask import Flask,flash,request,render_template,url_for,redirect,send_from_directory,abort,after_this_request,session,stream_with_context
+from flask import flash,request,render_template,url_for,redirect,send_from_directory,abort,after_this_request,session,stream_with_context
 from .app import app
 import src.modules
 import os,shutil
@@ -66,7 +66,6 @@ def home():
     else:
         return render_template('home.html')
 
-    
 @app.route("/get-file/<file_name>")
 def getfile(file_name):
     """Return file for downloading,after download it will be deleted with the directory"""
@@ -87,7 +86,6 @@ def getfile(file_name):
     except FileNotFoundError:
         abort(404)
 
-
 @app.route('/sw.js',methods=["GET","POST"])
 def service_worker():
     from flask import make_response
@@ -99,6 +97,15 @@ def service_worker():
 @app.route("/about")
 def about():
     return render_template('about.html')
+
 @app.route("/privacy")
 def privacy():
     return render_template('privacy.html')
+
+@app.errorhandler(404)
+def page_not_found(error):
+    return render_template("page-404.html"), 404
+
+@app.errorhandler(500)
+def server_error(error):
+    return render_template("page-500.html"), 500 

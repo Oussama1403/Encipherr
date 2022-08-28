@@ -1,6 +1,6 @@
 """Main project modules"""
 
-from flask import Flask,request,session
+from flask import request,session
 from flask.wrappers import Request
 from werkzeug.utils import secure_filename
 from cryptography.fernet import Fernet
@@ -51,7 +51,7 @@ def Upload_file():
 
     if not request.form["key"] == "":
         user_name = session.get('username','not set')
-        parent_dir = '/home/oussama/Documents/WORK/PythonWork/Encipherr/project-src/' #set path
+        parent_dir = '/home/oussama/Documents/WORK/PythonWork/EncipherrGroup/Encipherr/' #set path
         path = os.path.join(parent_dir, user_name) # temporary folder with same name as guest username
         os.mkdir(path) #create temp dir
         
