@@ -124,6 +124,11 @@
     background-color: transparent;
     border: 1px solid transparent ;
     border-color:#1F2833;
+  }
+  .card {
+    background-color: transparent;
+    border: 1px solid #1F2833 ;
+    border-bottom-color:#1F2833;
   }   
 
   /* home */
