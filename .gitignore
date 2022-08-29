@@ -1,5 +1,5 @@
 # ignore db.sqlite3 
 src/db.sqlite3
 
-# ignore __pycache__ drir
+# ignore __pycache__ dir
 src/__pycache__
