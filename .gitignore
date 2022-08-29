@@ -1,5 +1,5 @@
-# ignore ALL .sqlite3 and __pycache__ files
+# ignore db.sqlite3 
 src/db.sqlite3
 
-# ignore ALL files in ANY directory named temp
+# ignore __pycache__ drir
 src/__pycache__
