@@ -1,0 +1,5 @@
+# ignore ALL .sqlite3 and __pycache__ files
+src/db.sqlite3
+
+# ignore ALL files in ANY directory named temp
+src/__pycache__
