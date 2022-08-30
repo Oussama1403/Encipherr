@@ -118,6 +118,11 @@ python3 main.py
 ## CHANGELOG
 Read the latest notable changes made to a Encipherr [here](CHANGELOG.md)
 
+## TODO
+- Custom encryption key (password).
+- More encryption algorithms.
+- Offline usage (semi-ready).
+- 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
