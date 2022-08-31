@@ -105,10 +105,10 @@ def about():
 def privacy():
     return render_template('privacy.html')
 
-"""@app.errorhandler(404)
+@app.errorhandler(404)
 def page_not_found(error):
     return render_template("page-404.html"), 404
 
 @app.errorhandler(500)
 def server_error(error):
-    return render_template("page-500.html"), 500 """
+    return render_template("page-500.html"), 500
