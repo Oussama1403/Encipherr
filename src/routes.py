@@ -20,7 +20,10 @@ def text_mode():
         response = src.modules.Decrypt_Text()
         return response 
 
-@app.route('/',methods=['POST','GET'])
+@app.route('/',methods=['GET'])
+def base():
+    return redirect(url_for('home'))
+
 @app.route('/home',methods=['POST','GET'])
 def home():
     """Handle all incoming post/get requests"""
