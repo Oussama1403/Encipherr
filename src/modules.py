@@ -51,7 +51,8 @@ def Upload_file():
 
     if not request.form["key"] == "":
         user_name = session.get('username','not set')
-        parent_dir = '/home/oussama/Documents/WORK/PythonWork/EncipherrGroup/Encipherr/' #set path
+        cwd = os.getcwd()
+        parent_dir = f'{cwd}/src/uploads' # set path
         path = os.path.join(parent_dir, user_name) # temporary folder with same name as guest username
         os.mkdir(path) #create temp dir
         
