@@ -1,4 +1,6 @@
 # Change Log
+## 2022-08-31
+- Improve app SEO
 ## 2022-08-28
 - Added custom 404 & 500 error handlers.
 - Added 404 & 500 error pages.
