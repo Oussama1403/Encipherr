@@ -97,6 +97,10 @@ def service_worker():
     response.headers['Service-Worker-Allowed'] = '/'
     return response
 
+@app.route('/robots.txt',methods=["GET"])
+def robots_file():
+    return open("./robots.txt","r").read()
+    
 @app.route("/about")
 def about():
     return render_template('about.html')
