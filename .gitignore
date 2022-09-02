@@ -3,3 +3,6 @@ src/db.sqlite3
 
 # ignore __pycache__ dir
 src/__pycache__
+
+# ignore config 
+src/config.py
