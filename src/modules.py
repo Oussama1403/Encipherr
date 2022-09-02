@@ -3,6 +3,7 @@
 from flask import request,session
 from flask.wrappers import Request
 from werkzeug.utils import secure_filename
+from .app import app
 from cryptography.fernet import Fernet
 import os,random
 
@@ -51,8 +52,7 @@ def Upload_file():
 
     if not request.form["key"] == "":
         user_name = session.get('username','not set')
-        cwd = os.getcwd()
-        parent_dir = f'{cwd}/src/static/uploads' # set path
+        parent_dir = app.config["UPLOAD_FOLDER"] # set path
         path = os.path.join(parent_dir, user_name) # temporary folder with same name as guest username
         os.mkdir(path) #create temp dir
         

@@ -79,7 +79,12 @@ def getfile(file_name):
         @after_this_request
         def remove_file_and_dir(response):
             if os.path.exists(path):
-                shutil.rmtree(path)
+                if app.config["ENV"] == "DEV":
+                    shutil.rmtree(path)
+                else:
+                    # Delete only the file without its dir to avoid 
+                    # OSError: [Errno 16] Device or resource busy: '.nfs0000000005..' prod error.
+                    os.remove(os.path.join(path,filename))
             session.pop('path')
             session.pop('filename')
             
@@ -99,7 +104,10 @@ def service_worker():
 
 @app.route('/robots.txt',methods=["GET"])
 def robots_file():
-    return open("./robots.txt","r").read()
+    from flask import make_response
+    response = make_response(send_from_directory('.',path='robots.txt'))
+    response.headers["Content-type"] = "text/plain"
+    return response
     
 @app.route("/about")
 def about():
