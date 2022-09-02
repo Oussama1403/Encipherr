@@ -64,8 +64,9 @@ git clone https://github.com/Oussama1403/Encipherr
 
 ```
 The project directory will contain:
-```
 
+```
+.
 ├── CHANGELOG.md
 ├── LICENSE.txt
 ├── main.py
@@ -77,22 +78,26 @@ The project directory will contain:
     ├── config.py
     ├── db.sqlite3
     ├── modules.py
+    ├── robots.txt
     ├── routes.py
     ├── static
-    │   ├── css
-    │   │   └── style.css
-    │   ├── eg.html
-    │   ├── js
-    │   │   ├── ajaxcall.js
-    │   │   ├── egg.js
-    │   │   └── upload.js
-    │   ├── logo.png
-    │   └── pwa
-    │       ├── 512x512-blue.png
-    │       ├── 512x512.png
-    │       ├── app.js
-    │       ├── manifest.json
-    │       └── offline.html
+    │   ├── assets
+    │   │   └── logo.png
+    │   ├── css
+    │   │   └── style.css
+    │   ├── easter-egg
+    │   │   ├── egg.html
+    │   │   └── egg.js
+    │   ├── js
+    │   │   ├── ajaxcall.js
+    │   │   └── upload.js
+    │   ├── pwa
+    │   │   ├── 512x512-blue.png
+    │   │   ├── 512x512.png
+    │   │   ├── app.js
+    │   │   ├── manifest.json
+    │   │   └── offline.html
+    │   └── uploads
     ├── sw.js
     └── templates
         ├── about.html
@@ -101,6 +106,8 @@ The project directory will contain:
         ├── page-404.html
         ├── page-500.html
         └── privacy.html
+
+9 directories, 30 files
 
 ```
 
