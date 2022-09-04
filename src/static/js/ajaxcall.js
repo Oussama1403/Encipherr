@@ -16,11 +16,12 @@ function genkey() {
   
 function text_mode(name,value) {
     key = document.getElementById('key').value;
+    key_type = document.getElementById('key_type').value;
     text = document.getElementById('txtarea').value;
-    console.log("name ",name," value ",value)
     var dict = {};
     dict[name]=value;
     dict["key"]=key;
+    dict["key_type"] = key_type;
     dict["value"]=text;
 
     $.ajax("/text", {

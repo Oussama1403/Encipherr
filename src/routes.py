@@ -2,23 +2,26 @@
 
 from flask import flash,request,render_template,url_for,redirect,send_from_directory,abort,after_this_request,session,stream_with_context
 from .app import app
-import src.modules
+from src.modules import TextEncryption,FileEncryption,Utils
 import os,shutil
 
 @app.route('/genkey',methods=['GET'])
 def genkey():
-    response = src.modules.genkey()
-    return response
+    return Utils.genkey()
 
 @app.route('/text',methods=['POST'])
 def text_mode():
-    data = request.get_json()
+    data = request.get_json() 
+
+    text = TextEncryption()
+    
     if data["submit_b"] == "Encrypt Text":
-        response = src.modules.Encrypt_Text()
+        response = text.encrypt()
         return response
     else:
-        response = src.modules.Decrypt_Text()
+        response = text.decrypt()
         return response 
+
 
 @app.route('/',methods=['GET'])
 def base():
@@ -29,12 +32,13 @@ def home():
     """Handle all incoming post/get requests"""
     
     if request.method == 'POST':
-        src.modules.SetupGuestSession()
+        Utils.SetupGuestSession()
         if request.form["submit_b"] == "Upload and Encrypt":
             try:
-                src.modules.Upload_file()
+                Utils.Upload_file()
                 try:
-                    filename=src.modules.Encrypt_file()
+                    file = FileEncryption()
+                    filename=file.encrypt()
                 except:
                     flash('Encryption failed! , possible problem: key not found or invalid key')
                     path = session.get('path','not set')
@@ -48,10 +52,11 @@ def home():
 
         elif request.form["submit_b"] == "Upload and Decrypt":
             try:
-                src.modules.Upload_file()
+                Utils.Upload_file()
                 
                 try:
-                    filename=src.modules.Decrypt_file()
+                    file = FileEncryption()
+                    filename=file.decrypt()
                 except:
                     flash('Decryption failed! , possible problem: key not found or invalid key')
                     path = session.get('path','not set') 
