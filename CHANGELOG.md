@@ -1,4 +1,6 @@
 # Change Log
+## 2022-09-04
+- Added an option to encrypt with a <b>custom password</b> of the user choice.
 ## 2022-08-31
 - Improve app SEO
 ## 2022-08-28
