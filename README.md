@@ -126,7 +126,7 @@ python3 main.py
 Read the latest notable changes made to a Encipherr [here](CHANGELOG.md)
 
 ## TODO
-- Custom encryption key (password).
+- Custom encryption key (password) :heavy_check_mark:.
 - More encryption algorithms.
 - Offline usage (semi-ready).
 ## Contributing
