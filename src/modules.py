@@ -11,12 +11,15 @@ import base64
 import os,random
 
 class TextEncryption():
+    
     def __init__(self):
         data = request.get_json() 
         self.key = Utils.return_key(data["key"],data["key_type"])
         self.value = data["value"]
     
     def encrypt(self):
+        """Encrypt Text"""
+
         if not self.value == '':
             try:
                 fernet = Fernet(self.key)
@@ -29,6 +32,8 @@ class TextEncryption():
             return {"status":"0","value":"Encryption failed! , No text to encrypt, please type something"}
     
     def decrypt(self):
+        """Decrypt Text"""
+
         if not self.value == '':
            try:
                fernet = Fernet(self.key)
