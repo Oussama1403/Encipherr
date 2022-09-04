@@ -16,7 +16,7 @@ function genkey() {
   
 function text_mode(name,value) {
     key = document.getElementById('key').value;
-    key_type = document.querySelector("input[type='radio'][name=keytype]:checked").value;
+    key_type = document.querySelector("input[type='radio'][name=key_type]:checked").value;
     text = document.getElementById('txtarea').value;
     var dict = {};
     dict[name]=value;
