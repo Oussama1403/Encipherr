@@ -45,4 +45,4 @@ function text_mode(name,value) {
 function close_msg(){
     document.getElementById('tohide').style.display = 'none';
 
-}  
+}

@@ -46,7 +46,7 @@ Encipherr - Online Tool for AES Encryption and Decryption
       </label>
     </div>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="key_type" value="pwd">
+      <input id="pwd" class="form-check-input" type="radio" name="key_type" value="pwd">
       <label class="form-check-label" for="flexRadioDefault2">
         Custom Password
       </label>
@@ -54,7 +54,7 @@ Encipherr - Online Tool for AES Encryption and Decryption
     </p>
     
     <p><b>Or</b></p>
-    <input id="btn" type="button" name="submit_b" onclick="genkey()" value="Generate Key" class="btn btn-primary"/>
+    <input id="btn" type="button" name="submit_b" onclick="genkey()" value="Generate Key" class="btn btn-primary genkey"/>
     <br />
     <br />
     
@@ -86,4 +86,15 @@ Encipherr - Online Tool for AES Encryption and Decryption
   <br />
   <br />
 </div>
+
+<script>
+
+// disable genkey button when key in custom mode.
+
+$("#pwd").click( function(){
+  $(':button.genkey').attr('disabled','disabled');
+})
+
+</script>
+
 {% endblock content %}

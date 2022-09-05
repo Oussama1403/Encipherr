@@ -105,7 +105,12 @@
     border-color: #23272a	;
     box-shadow: none;
   }
-  
+  .genkey:disabled {
+    color: #f3f0f2	!important ;
+    background-color: #2e3438	;
+    border-color: #23272a	;
+    box-shadow: none;
+  }
   #upload_btn {
     color: #1abc9c;
     border-color: #1abc9c;
