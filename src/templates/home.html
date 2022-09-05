@@ -40,7 +40,7 @@ Encipherr - Online Tool for AES Encryption and Decryption
     <p><input id="key" type="text" name="key" value="{{key}}" class="form-control" aria-label="Large" aria-describedby="inputGroup-sizing-sm" placeholder="Key of the encryption" /></p>
     <p>
     <div class="form-check">
-      <input class="form-check-input" type="radio" name="key_type" value="aes" checked>
+      <input id="aes" class="form-check-input" type="radio" name="key_type" value="aes" checked>
       <label class="form-check-label" for="flexRadioDefault1">
         32-byte key.
       </label>
@@ -93,6 +93,10 @@ Encipherr - Online Tool for AES Encryption and Decryption
 
 $("#pwd").click( function(){
   $(':button.genkey').attr('disabled','disabled');
+})
+$("#aes").click( function(){
+  $(':button.genkey').removeAttr("disabled");
+
 })
 
 </script>
