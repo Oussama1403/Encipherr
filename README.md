@@ -129,6 +129,12 @@ Read the latest notable changes made to a Encipherr [here](CHANGELOG.md)
 - Custom encryption key (password) (Done) :heavy_check_mark:.
 - More encryption algorithms.
 - Offline usage (semi-ready).
+
+## Encipherr-CLI :sparkles:
+
+<b>A command line interface (CLI) version of Encipherr for the offline usage.
+<a href="https://github.com/Oussama1403/Encipherr-CLI">github.com/Oussama1403/Encipherr-CLI</a></b>
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
