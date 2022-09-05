@@ -48,8 +48,7 @@
 ## About The Project
 
 <!-- [![screenshot](screenshot.png)](https://encipherr.pythonanywhere.com/) -->
-<img src="scrn_1.png" width="200" />
-<img src="scrn_2.png" width="200" />
+<img src="scrn_1.png" width="200" /><img src="scrn_2.png" width="200" />
 
 Encipherr is a web app that provides powerful encryption of data. It is fast and free, and it is open source. It uses no ads, and it is the only easy way to encrypt your data in any web browser.
 
