@@ -71,6 +71,12 @@
     color: #01AC59 !important;
     border-bottom: 2px solid #01AC59;
   }
+  
+  /* radio box */
+  /* (+label) a label that immediately follows an input of type radio that is checked */
+  input[type="radio"]:checked+label{
+      font-weight: bold;
+  }
 
   /* buttons */
   input[type="button"],input[type="submit"] {
