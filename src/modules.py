@@ -88,6 +88,7 @@ class Utils():
         """generate key from custom pwd if key_type == pwd else return the AES key"""
 
         if type == "pwd":
+            if key == "":return ""
             salt = app.config["SALT"]
             kdf = PBKDF2HMAC(
             algorithm=hashes.SHA256(),
