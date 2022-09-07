@@ -143,9 +143,8 @@
   #key:hover,#key:focus,#txtarea:hover,#txtarea:focus {
     box-shadow: 0px 0px 15px -1px rgba(158, 158, 158, 0.84);
     border-color:transparent;
-    border-bottom-color:#1F2833 ;
-
   }
+
   .card {
     background-color: transparent;
     border: 1px solid #1F2833 ;
