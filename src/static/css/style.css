@@ -144,11 +144,14 @@
     box-shadow: 0px 0px 15px -1px rgba(158, 158, 158, 0.84);
     border-color:transparent;
   }
-
+  #key::selection,#txtarea::selection {
+    color: white;
+    background: #383c4a;
+  }
+  /* about */
   .card {
     background-color: transparent;
     border: 1px solid #1F2833 ;
-    border-bottom-color:#1F2833;
   }   
 
   /* home */
