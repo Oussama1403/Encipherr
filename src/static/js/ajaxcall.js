@@ -1,9 +1,3 @@
-function HideErrorMsg() {
-    if (document.getElementById('tohide').style.display == 'block') {
-      document.getElementById('tohide').style.display = 'none';
-      }
-}
-  
 function genkey() {
     $.ajax("/genkey", {
       type: 'GET',  // http method
@@ -40,9 +34,4 @@ function text_mode(name,value) {
           }      
       }, 
     });
-}
-
-function close_msg(){
-    document.getElementById('tohide').style.display = 'none';
-
 }

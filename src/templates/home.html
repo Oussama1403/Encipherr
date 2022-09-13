@@ -15,7 +15,7 @@ Encipherr - Online Tool for AES Encryption and Decryption
   <div id="tohide" style="display:none">
     <div class="container">
         <div class="alert alert-warning">
-            <button type="button" class="close" onclick="close_msg()">&times;</button>
+            <button type="button" class="close" onclick="CloseMsg()">&times;</button>
             <div id="message" style="text-align:center"></div>
           </div>
     </div>
@@ -86,19 +86,5 @@ Encipherr - Online Tool for AES Encryption and Decryption
   <br />
   <br />
 </div>
-
-<script>
-
-// disable genkey button when key in custom mode.
-
-$("#pwd").click( function(){
-  $(':button.genkey').attr('disabled','disabled');
-})
-$("#aes").click( function(){
-  $(':button.genkey').removeAttr("disabled");
-
-})
-
-</script>
 
 {% endblock content %}
